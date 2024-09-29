@@ -8,16 +8,48 @@
     <style>
         body {
             padding-top: 56px;
+            background-color: #000;
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
         }
         .profile-img {
             max-width: 200px;
             margin: 0 auto;
             display: block;
+            border: 2px solid #0f0;
+        }
+        .navbar, .footer {
+            background-color: #000;
+        }
+        .navbar-brand, .nav-link {
+            color: #0f0 !important;
+        }
+        .section-header {
+            color: #0f0;
+            border-bottom: 2px solid #0f0;
+        }
+        .code-rain {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.2; /* Subtle effect */
+        }
+        .toggle-lang {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #0f0;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="code-rain" id="code-rain"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Simon Nolet's Portfolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +66,7 @@
                     <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <div class="toggle-lang" onclick="toggleLanguage()">FR/EN</div>
             </div>
         </div>
     </nav>
@@ -41,71 +74,69 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <img src="path/to/your-image.jpg" class="profile-img rounded-circle" alt="Profile Image">
+                <img src="img/simon.jpg" class="profile-img rounded-circle" alt="Profile Image">
                 <h1 class="mt-4">Simon Nolet</h1>
-                <p class="lead">Professionnal Transverse Penetration Tester</p>
+                <p class="lead">Professional Transverse Penetration Tester</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
                 <section id="about">
-                    <h2>About Me</h2>
-                    <p>Simon is a cybersecurity expert with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.</p>
+                    <h2 class="section-header">About Me</h2>
+                    <p id="about-text">Simon is a cybersecurity expert with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.</p>
                 </section>
 
                 <section id="experience">
-                    <h2>Experience</h2>
-                    <p><strong>Senior Advisor at Desjardins</strong><br>
+                    <h2 class="section-header">Experience</h2>
+                    <p id="experience-text"><strong>Senior Advisor at Desjardins</strong><br>
                     10 years of professional experience<br>
-                    Experienced in testing active directory,network infrastructures and systems in large enterprise environments, specializing identifying root causes and leverage them to create attack chains and demonstrate high-impact scenarios.</p>
+                    Experienced in testing active directory, network infrastructures, and systems in large enterprise environments, specializing in identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.</p>
                 </section>
 
                 <section id="education">
-                    <h2>Education</h2>
-                    <p><strong>DEC - Diploma of College Studies (Network Management)</strong><br>
+                    <h2 class="section-header">Education</h2>
+                    <p id="education-text"><strong>DEC - Diploma of College Studies (Network Management)</strong><br>
                     Cégep Lévis-Lauzon</p>
                 </section>
 
                 <section id="certifications">
-                    <h2>Certifications</h2>
-                    <p>Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)</p>
+                    <h2 class="section-header">Certifications</h2>
+                    <p id="certifications-text">Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)</p>
                 </section>
 
                 <section id="volunteering">
-                    <h2>Volunteering</h2>
-                    <ul>
+                    <h2 class="section-header">Volunteering</h2>
+                    <ul id="volunteering-text">
                         <li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li>
                         <li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li>
                         <li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li>
                         <li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li>
-                        <li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 years)</li>
+                        <li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>
                     </ul>
                 </section>
 
                 <section id="presentations">
-                    <h2>Presentations</h2>
-                    <ul>
+                    <h2 class="section-header">Presentations</h2>
+                    <ul id="presentations-text">
                         <li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li>
                         <li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li>
-                        <li>Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li>
+                        <li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li>
                         <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li>
                         <li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li>
                         <li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li>
-                        <li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Hardening your perimeter with open source tooling</a> (April 2024 - Hardly Stricly Security</li>
                         <li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>
-
                     </ul>
                 </section>
 
                 <section id="research">
-                    <h2>Research</h2>
-                    <p><a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)</p>
+                    <h2 class="section-header">Research</h2>
+                    <p id="research-text"><a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)</p>
                 </section>
 
                 <section id="contact">
-                    <h2>Contact</h2>
-                    LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a></p>
+                    <h2 class="section-header">Contact</h2>
+                    <p id="contact-text">LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a></p>
                 </section>
             </div>
         </div>
@@ -114,5 +145,58 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleLanguage() {
+            const lang = document.documentElement.lang;
+            if (lang === 'en') {
+                document.documentElement.lang = 'fr';
+                document.getElementById('about-text').innerText = "Simon est un expert en cybersécurité avec 10 ans d'expérience, spécialisé dans la sécurité offensive depuis 9 ans. En tant que conseiller principal chez Desjardins, il se concentre sur les chaînes d'attaque à fort impact. Il a réalisé plus de 250 tests de pénétration et est un membre actif de la communauté de la cybersécurité, partageant ses connaissances en tant que bénévole lors d'événements comme le Hackfest CTF et en formant des individus depuis plus de 5 ans dans le cours Security 103. Simon valorise l'honnêteté, la transparence et l'intégrité dans son travail. Son expertise couvre l'infrastructure réseau, le pentesting Active Directory, le red teaming, l'évasion des contrôles d'accès et l'utilisation efficace de l'ordinateur. Il s'efforce constamment d'améliorer la sécurité des entreprises en rédigeant des rapports précis et en fournissant des recommandations actionnables pour renforcer la résilience contre les adversaires. Il croit que de nombreuses causes profondes des problèmes de sécurité peuvent être résolues par la connaissance et la formation. Son objectif est d'éduquer et de renforcer les mesures de sécurité pour protéger les entreprises et les individus dans les environnements numériques.";
+                document.getElementById('experience-text').innerText = "Conseiller principal chez Desjardins, 10 ans d'expérience professionnelle, spécialisé dans les tests de réseaux, d'infrastructures et de systèmes dans des environnements d'entreprise de grande taille, identifiant les causes profondes et les utilisant pour créer des chaînes d'attaque et démontrer des scénarios à fort impact.";
+                document.getElementById('education-text').innerText = "DEC - Diplôme d'études collégiales (Gestion de réseau), Cégep Lévis-Lauzon";
+                document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (ID de la certification : OS-17788)";
+                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Designer de Challenge Hackfest</a> (7 ans)</li><li><a href="https://hfctf.ca/team/viper/">Piste Débutant</a> (5 ans)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 ans)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 ans)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 an)</li>';
+                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">Mon expérience de piratage de jeux vidéo</a> (Octobre 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">Mon expérience de piratage de jeux vidéo Partie 2</a> (Mai 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Exploitation des défauts d\'insécurité pour pirater la forêt</a> (29 août 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Escalade de privilèges Linux</a> (Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (Octobre 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration des homelabs</a> (Février 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (Mai 2024 - Quebecsec)</li>';
+                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Oubliez votre périmètre : RCE dans Pulse Connect Secure</a> (CVE-2020-8218)';
+                document.getElementById('contact-text').innerHTML = 'LinkedIn : <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
+            } else {
+                document.documentElement.lang = 'en';
+                document.getElementById('about-text').innerText = "Simon is a cybersecurity expert with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.";
+                document.getElementById('experience-text').innerText = "Senior Advisor at Desjardins, 10 years of professional experience, experienced in testing network infrastructures, systems, and Active Directory in large enterprise environments, identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.";
+                document.getElementById('education-text').innerText = "DEC - Diploma of College Studies (Network Management), Cégep Lévis-Lauzon";
+                document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)";
+                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li><li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>';
+                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>';
+                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)';
+                document.getElementById('contact-text').innerHTML = 'LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
+            }
+        }
+
+        // Matrix code rain effect
+        const canvas = document.createElement('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.getElementById('code-rain').appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }).map(() => 1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0f0';
+            ctx.font = `${fontSize}px Arial`;
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+    </script>
 </body>
 </html>
