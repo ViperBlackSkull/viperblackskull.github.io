@@ -36,7 +36,7 @@
             left: 0;
             z-index: -1;
             pointer-events: none;
-            opacity: 0.2; /* Subtle effect */
+            opacity: 0.2;
         }
         .toggle-lang {
             position: absolute;
@@ -44,6 +44,12 @@
             top: 20px;
             color: #0f0;
             cursor: pointer;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
 </head>
@@ -84,7 +90,7 @@
             <div class="col-lg-12">
                 <section id="about">
                     <h2 class="section-header">About Me</h2>
-                    <p id="about-text">Simon is a cybersecurity expert with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.</p>
+                    <p id="about-text">Simon is highly skilled in cybersecurity with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.</p>
                 </section>
 
                 <section id="experience">
@@ -152,7 +158,7 @@
             const lang = document.documentElement.lang;
             if (lang === 'en') {
                 document.documentElement.lang = 'fr';
-                document.getElementById('about-text').innerText = "Simon est un expert en cybersécurité avec 10 ans d'expérience, spécialisé dans la sécurité offensive depuis 9 ans. En tant que conseiller principal chez Desjardins, il se concentre sur les chaînes d'attaque à fort impact. Il a réalisé plus de 250 tests de pénétration et est un membre actif de la communauté de la cybersécurité, partageant ses connaissances en tant que bénévole lors d'événements comme le Hackfest CTF et en formant des individus depuis plus de 5 ans dans le cours Security 103. Simon valorise l'honnêteté, la transparence et l'intégrité dans son travail. Son expertise couvre l'infrastructure réseau, le pentesting Active Directory, le red teaming, l'évasion des contrôles d'accès et l'utilisation efficace de l'ordinateur. Il s'efforce constamment d'améliorer la sécurité des entreprises en rédigeant des rapports précis et en fournissant des recommandations actionnables pour renforcer la résilience contre les adversaires. Il croit que de nombreuses causes profondes des problèmes de sécurité peuvent être résolues par la connaissance et la formation. Son objectif est d'éduquer et de renforcer les mesures de sécurité pour protéger les entreprises et les individus dans les environnements numériques.";
+                document.getElementById('about-text').innerText = "Simon possède des compétences avancées en cybersécurité avec 10 ans d'expérience, spécialisé dans la sécurité offensive depuis 9 ans. En tant que conseiller principal chez Desjardins, il se concentre sur les chaînes d'attaque à fort impact. Il a réalisé plus de 250 tests de pénétration et est un membre actif de la communauté de la cybersécurité, partageant ses connaissances en tant que bénévole lors d'événements comme le Hackfest CTF et en formant des individus depuis plus de 5 ans dans le cours Security 103. Simon valorise l'honnêteté, la transparence et l'intégrité dans son travail. Son expertise couvre l'infrastructure réseau, le pentesting Active Directory, le red teaming, l'évasion des contrôles d'accès et l'utilisation efficace de l'ordinateur. Il s'efforce constamment d'améliorer la sécurité des entreprises en rédigeant des rapports précis et en fournissant des recommandations actionnables pour renforcer la résilience contre les adversaires. Il croit que de nombreuses causes profondes des problèmes de sécurité peuvent être résolues par la connaissance et la formation. Son objectif est d'éduquer et de renforcer les mesures de sécurité pour protéger les entreprises et les individus dans les environnements numériques.";
                 document.getElementById('experience-text').innerText = "Conseiller principal chez Desjardins, 10 ans d'expérience professionnelle, spécialisé dans les tests de réseaux, d'infrastructures et de systèmes dans des environnements d'entreprise de grande taille, identifiant les causes profondes et les utilisant pour créer des chaînes d'attaque et démontrer des scénarios à fort impact.";
                 document.getElementById('education-text').innerText = "DEC - Diplôme d'études collégiales (Gestion de réseau), Cégep Lévis-Lauzon";
                 document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (ID de la certification : OS-17788)";
@@ -162,7 +168,7 @@
                 document.getElementById('contact-text').innerHTML = 'LinkedIn : <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
             } else {
                 document.documentElement.lang = 'en';
-                document.getElementById('about-text').innerText = "Simon is a cybersecurity expert with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.";
+                document.getElementById('about-text').innerText = "Simon is highly skilled in cybersecurity with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.";
                 document.getElementById('experience-text').innerText = "Senior Advisor at Desjardins, 10 years of professional experience, experienced in testing network infrastructures, systems, and Active Directory in large enterprise environments, identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.";
                 document.getElementById('education-text').innerText = "DEC - Diploma of College Studies (Network Management), Cégep Lévis-Lauzon";
                 document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)";
