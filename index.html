@@ -36,7 +36,7 @@
             left: 0;
             z-index: -1;
             pointer-events: none;
-            opacity: 0.2;
+            opacity: 0.2; /* Subtle effect */
         }
         .toggle-lang {
             position: absolute;
@@ -44,12 +44,6 @@
             top: 20px;
             color: #0f0;
             cursor: pointer;
-        }
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
         }
     </style>
 </head>
@@ -82,7 +76,7 @@
             <div class="col-lg-12 text-center">
                 <img src="img/simon.jpg" class="profile-img rounded-circle" alt="Profile Image">
                 <h1 class="mt-4">Simon Nolet</h1>
-                <p class="lead">Professional Transverse Penetration Tester</p>
+                <p class="lead">Offensive Security Specialist & Cybersecurity Educator</p>
             </div>
         </div>
 
@@ -90,7 +84,13 @@
             <div class="col-lg-12">
                 <section id="about">
                     <h2 class="section-header">About Me</h2>
-                    <p id="about-text">Simon is highly skilled in cybersecurity with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.</p>
+                    <p id="about-text">Simon Nolet is a cybersecurity professional with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains, leveraging automation and efficiency-driven habits and tooling to speedup security assessments. Over the course of his career, he has conducted more than 250 penetration tests, gaining a deep understanding of how organizations are compromised and the root causes that lead to security misconfiguration.
+
+                        To bridge the gap between theory and real-world cybersecurity, Simon founded Hacktive Education—an initiative dedicated to teaching beginners, system administrators, and cybersecurity enthusiasts practical security skills. His approach is based on proven methodologies that have successfully compromised hundreds of companies, with a focus on divergent thinking and understanding the root causes of vulnerabilities rather than just addressing surface-level issues.
+                        
+                        His expertise includes network infrastructure security, Active Directory pentesting, red teaming, access control evasion, and automation. While he integrates AI-driven automation to enhance efficiency in his work, he prioritizes human-driven decision-making and critical thinking.
+                        
+                        Committed to honesty, transparency, and integrity, Simon actively contributes to the cybersecurity community through training, workshops, and volunteer efforts at major events like Hackfest CTF. His mission is to equip individuals and organizations with practical security knowledge that goes beyond compliance—focusing on real-world defense strategies against adversaries.</p>
                 </section>
 
                 <section id="experience">
@@ -128,12 +128,10 @@
                         <li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li>
                         <li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li>
                         <li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li>
-                        <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Privilege Escalation Linux</a> (Montrehack)</li>
+                        <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li>
                         <li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li>
                         <li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li>
                         <li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>
-                        <li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Hardening Your Perimeter with Open Source Tooling</a> (May 2024 - Quebecsec)</li>
-                        <li><a href="https://gosec.net/workshopsandpanels/">Mettez-vous dans la peau d'un pentester</a> (Septembre 2024 - GoSec)</li>
                     </ul>
                 </section>
 
@@ -158,51 +156,23 @@
             const lang = document.documentElement.lang;
             if (lang === 'en') {
                 document.documentElement.lang = 'fr';
-                document.getElementById('about-text').innerText = "Simon possède des compétences avancées en cybersécurité avec 10 ans d'expérience, spécialisé dans la sécurité offensive depuis 9 ans. En tant que conseiller principal chez Desjardins, il se concentre sur les chaînes d'attaque à fort impact. Il a réalisé plus de 250 tests de pénétration et est un membre actif de la communauté de la cybersécurité, partageant ses connaissances en tant que bénévole lors d'événements comme le Hackfest CTF et en formant des individus depuis plus de 5 ans dans le cours Security 103. Simon valorise l'honnêteté, la transparence et l'intégrité dans son travail. Son expertise couvre l'infrastructure réseau, le pentesting Active Directory, le red teaming, l'évasion des contrôles d'accès et l'utilisation efficace de l'ordinateur. Il s'efforce constamment d'améliorer la sécurité des entreprises en rédigeant des rapports précis et en fournissant des recommandations actionnables pour renforcer la résilience contre les adversaires. Il croit que de nombreuses causes profondes des problèmes de sécurité peuvent être résolues par la connaissance et la formation. Son objectif est d'éduquer et de renforcer les mesures de sécurité pour protéger les entreprises et les individus dans les environnements numériques.";
+                document.getElementById('about-text').innerText = "Simon Nolet est un expert en cybersécurité avec 10 ans d’expérience, dont 9 en sécurité offensive. Conseiller principal chez Desjardins, il se spécialise dans l’exploitation des chaînes d’attaque à fort impact, en misant sur l’automatisation et des méthodes efficaces pour accélérer les évaluations de sécurité. Avec plus de 250 tests d’intrusion à son actif, il possède une compréhension approfondie des façons dont les organisations se font compromettre et des causes réelles derrière les failles de sécurité. Pour rapprocher la théorie de la réalité terrain, il a fondé Hacktive Education, une initiative qui vise à former les admins systèmes, les professionnels IT et les passionnés de cybersécurité aux vraies techniques de sécurité offensive. Il enseigne une approche basée sur des méthodes qui ont prouvé leur efficacité en exposant des vulnérabilités critiques dans plusieurs entreprises. Son objectif est de développer la pensée divergente et de traiter les problèmes à la source, plutôt que d’appliquer des correctifs temporaires. Son expertise couvre la sécurité des infrastructures réseau, les tests d’intrusion Active Directory, le red teaming, l’évasion des contrôles d’accès et l’automatisation. Même s’il intègre des outils d’intelligence artificielle pour améliorer son efficacité, il met toujours l’accent sur l’analyse humaine et la prise de décision stratégique. Fidèle à ses valeurs d’intégrité, de transparence et de rigueur, Simon s’implique activement dans la communauté en partageant son expertise à travers des formations, des ateliers et du bénévolat lors d’événements majeurs comme le CTF du Hackfest. Sa mission : outiller les organisations et les professionnels avec des stratégies de défense qui vont au-delà de la simple conformité, en mettant l’accent sur des solutions adaptées aux menaces réelles.";
                 document.getElementById('experience-text').innerText = "Conseiller principal chez Desjardins, 10 ans d'expérience professionnelle, spécialisé dans les tests de réseaux, d'infrastructures et de systèmes dans des environnements d'entreprise de grande taille, identifiant les causes profondes et les utilisant pour créer des chaînes d'attaque et démontrer des scénarios à fort impact.";
                 document.getElementById('education-text').innerText = "DEC - Diplôme d'études collégiales (Gestion de réseau), Cégep Lévis-Lauzon";
                 document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (ID de la certification : OS-17788)";
-                document.getElementById('volunteering-text').innerHTML = `
-                    <li><a href="https://hfctf.ca/team/viper/">Designer de Challenge Hackfest</a> (7 ans)</li>
-                    <li><a href="https://hfctf.ca/team/viper/">Piste Débutant</a> (5 ans)</li>
-                    <li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 ans)</li>
-                    <li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 ans)</li>
-                    <li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 an)</li>`;
-                document.getElementById('presentations-text').innerHTML = `
-                    <li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">Mon expérience de piratage de jeux vidéo</a> (Octobre 2018 - Quebecsec)</li>
-                    <li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">Mon expérience de piratage de jeux vidéo Partie 2</a> (Mai 2019 - Quebecsec)</li>
-                    <li><a href="https://gosec.net/">Exploitation des défauts d'insécurité pour pirater la forêt</a> (29 août 2019 - GoSec)</li>
-                    <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Escalade de privilèges Linux</a> (Montrehack)</li>
-                    <li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (Octobre 2023 - Quebecsec)</li>
-                    <li><a href="https://quebecsec.ca/event/homelabs.html">Exploration des homelabs</a> (Février 2023 - Quebecsec)</li>
-                    <li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (Mai 2024 - Quebecsec)</li>
-                    <li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Renforcement de votre périmètre avec des outils open source</a> (Mai 2024 - Quebecsec)</li>
-                    <li><a href="https://gosec.net/workshopsandpanels/">Mettez-vous dans la peau d'un pentester</a> (Septembre 2024 - GoSec)</li>`;
-                document.getElementById('research-text').innerHTML = `<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Oubliez votre périmètre : RCE dans Pulse Connect Secure</a> (CVE-2020-8218)`;
+                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Designer de Challenge Hackfest</a> (7 ans)</li><li><a href="https://hfctf.ca/team/viper/">Piste Débutant</a> (5 ans)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 ans)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 ans)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 an)</li>';
+                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">Mon expérience de piratage de jeux vidéo</a> (Octobre 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">Mon expérience de piratage de jeux vidéo Partie 2</a> (Mai 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Exploitation des défauts d\'insécurité pour pirater la forêt</a> (29 août 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Escalade de privilèges Linux</a> (Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (Octobre 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration des homelabs</a> (Février 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (Mai 2024 - Quebecsec)</li>';
+                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Oubliez votre périmètre : RCE dans Pulse Connect Secure</a> (CVE-2020-8218)';
                 document.getElementById('contact-text').innerHTML = 'LinkedIn : <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
             } else {
                 document.documentElement.lang = 'en';
-                document.getElementById('about-text').innerText = "Simon is highly skilled in cybersecurity with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.";
+                document.getElementById('about-text').innerText = "Simon is a cybersecurity profesionnal with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains. He has conducted over 250 penetration tests and is an active member of the cybersecurity community, dedicated to sharing his knowledge by volunteering at events like Hackfest CTF and training individuals for over 5 years in the Security 103 course. Simon values honesty, transparency, and integrity in his work. His expertise covers network infrastructure, Active Directory pentesting, red teaming, access control evasion, and efficient computer use. He constantly strives to improve business security by writing precise reports and providing actionable recommendations to enhance resilience against adversaries. He believes that many root causes of security issues can be addressed through knowledge and training. His goal is to educate and strengthen security measures to protect businesses and individuals in digital environments.";
                 document.getElementById('experience-text').innerText = "Senior Advisor at Desjardins, 10 years of professional experience, experienced in testing network infrastructures, systems, and Active Directory in large enterprise environments, identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.";
                 document.getElementById('education-text').innerText = "DEC - Diploma of College Studies (Network Management), Cégep Lévis-Lauzon";
                 document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)";
-                document.getElementById('volunteering-text').innerHTML = `
-                    <li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li>
-                    <li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li>
-                    <li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li>
-                    <li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li>
-                    <li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>`;
-                document.getElementById('presentations-text').innerHTML = `
-                    <li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li>
-                    <li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li>
-                    <li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li>
-                    <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Privilege Escalation Linux</a> (Montrehack)</li>
-                    <li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li>
-                    <li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li>
-                    <li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>
-                    <li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Hardening Your Perimeter with Open Source Tooling</a> (May 2024 - Quebecsec)</li>
-                    <li><a href="https://gosec.net/workshopsandpanels/">Mettez-vous dans la peau d'un pentester</a> (September 2024 - GoSec)</li>`;
-                document.getElementById('research-text').innerHTML = `<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)`;
+                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li><li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>';
+                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>';
+                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)';
                 document.getElementById('contact-text').innerHTML = 'LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
             }
         }
