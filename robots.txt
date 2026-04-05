@@ -1,0 +1,46 @@
+# Robots.txt for Simon Nolet Portfolio
+# https://viperblackskull.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://viperblackskull.github.io/sitemap.xml
+
+# Allow all crawlers full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

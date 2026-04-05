@@ -3,209 +3,1378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Nolet's Portfolio</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Primary Meta Tags -->
+    <title>Simon Nolet | AI Security Engineer & Offensive Mindset Educator</title>
+    <meta name="title" content="Simon Nolet | AI Security Engineer & Offensive Mindset Educator">
+    <meta name="description" content="Simon Nolet teaches security professionals how to integrate AI into their workflows without losing critical thinking. 10+ years offensive security, 250+ pentests, OSCP certified. Founder of Hacktive Education.">
+    <meta name="keywords" content="Simon Nolet, cybersecurity educator, penetration testing, offensive security, AI security, OSCP, Hacktive Education, CTF, security training, AI-assisted security, red team, vulnerability assessment">
+    <meta name="author" content="Simon Nolet">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://viperblackskull.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viperblackskull.github.io/">
+    <meta property="og:title" content="Simon Nolet | AI Security Engineer & Offensive Mindset Educator">
+    <meta property="og:description" content="Teaching security professionals how to integrate AI into their workflows without losing critical thinking. 10+ years offensive security, 250+ pentests. Founder of Hacktive Education.">
+    <meta property="og:image" content="https://viperblackskull.github.io/img/simon.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Simon Nolet Portfolio">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://viperblackskull.github.io/">
+    <meta name="twitter:title" content="Simon Nolet | AI Security Engineer & Offensive Mindset Educator">
+    <meta name="twitter:description" content="Teaching security professionals how to integrate AI into their workflows without losing critical thinking. 10+ years offensive security, 250+ pentests.">
+    <meta name="twitter:image" content="https://viperblackskull.github.io/img/simon.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="CA-QC">
+    <meta name="geo.placename" content="Quebec">
+    <meta name="language" content="English, French">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="img/simon.jpg">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data - Person Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Simon Nolet",
+        "alternateName": "ViperBlackSkull",
+        "jobTitle": "AI Security Engineer & Offensive Mindset Educator",
+        "description": "Teaching security professionals how to integrate AI into their workflows without losing critical thinking. 10+ years offensive security, 250+ pentests conducted.",
+        "image": "https://viperblackskull.github.io/img/simon.jpg",
+        "url": "https://viperblackskull.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/simon-nolet",
+            "https://github.com/ViperBlackSkull",
+            "https://www.youtube.com/@hacktiveeducation",
+            "https://www.skool.com/hacktive-education-4611"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Desjardins",
+            "url": "https://www.desjardins.com"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Cégep Lévis-Lauzon"
+        },
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Professional Certification",
+            "name": "Offensive Security Certified Professional (OSCP)",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Offensive Security"
+            }
+        },
+        "knowsAbout": [
+            "Cybersecurity",
+            "Penetration Testing",
+            "Offensive Security",
+            "Red Team Operations",
+            "Active Directory Security",
+            "AI Security",
+            "Machine Learning",
+            "CTF Challenges",
+            "Security Education",
+            "Vulnerability Assessment"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Quebec",
+            "addressCountry": "Canada"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - Website Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Simon Nolet Portfolio",
+        "url": "https://viperblackskull.github.io",
+        "description": "Professional portfolio of Simon Nolet - AI Security Engineer & Offensive Mindset Educator",
+        "author": {
+            "@type": "Person",
+            "name": "Simon Nolet"
+        },
+        "inLanguage": ["en", "fr"],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://viperblackskull.github.io/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - Organization (Hacktive Education) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Hacktive Education",
+        "url": "https://hacktive.education",
+        "description": "Cybersecurity education platform focusing on AI-augmented security workflows",
+        "founder": {
+            "@type": "Person",
+            "name": "Simon Nolet"
+        }
+    }
+    </script>
     <style>
+        :root {
+            --bg-deep: #050508;
+            --bg-surface: #0c0c10;
+            --bg-card: rgba(15, 15, 20, 0.7);
+            --fg-primary: #e8e8ec;
+            --fg-secondary: #8a8a96;
+            --fg-muted: #5a5a66;
+            --accent-green: #00ff88;
+            --accent-green-dim: #00cc6a;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(0, 255, 136, 0.2);
+            --glow-green: rgba(0, 255, 136, 0.15);
+            --glow-cyan: rgba(0, 212, 255, 0.1);
+            --font-display: 'JetBrains Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg-deep);
+        }
+
         body {
-            padding-top: 56px;
-            background-color: #000;
-            color: #d4d4d4;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: var(--font-body);
+            background: transparent;
+            color: var(--fg-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        .profile-img {
-            max-width: 200px;
-            margin: 0 auto;
-            display: block;
-            border: 2px solid #0f0;
-        }
-        .navbar, .footer {
-            background-color: #000;
-        }
-        .navbar-brand, .nav-link {
-            color: #0f0 !important;
-        }
-        .section-header {
-            color: #0f0;
-            border-bottom: 2px solid #0f0;
-        }
-        .code-rain {
+
+        /* Matrix Rain Background */
+        .matrix-canvas {
             position: fixed;
-            width: 100%;
-            height: 100%;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* Ambient Background Effects */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 20%, var(--glow-green), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 80%, var(--glow-cyan), transparent);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background-image:
+                linear-gradient(var(--border-subtle) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.2; /* Subtle effect */
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--bg-deep), transparent);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
-        .toggle-lang {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            color: #0f0;
+
+        .nav.scrolled {
+            background: rgba(5, 5, 8, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo::before {
+            content: '>';
+            color: var(--accent-cyan);
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--fg-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-green);
+            background: rgba(0, 255, 136, 0.08);
+        }
+
+        .nav-toggle {
+            background: transparent;
+            border: 1px solid var(--border-accent);
+            color: var(--accent-green);
+            padding: 0.5rem 1rem;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
             cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
         }
-    </style>
-</head>
-<body>
-    <div class="code-rain" id="code-rain"></div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Simon Nolet's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#volunteering">Volunteering</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#presentations">Presentations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <div class="toggle-lang" onclick="toggleLanguage()">FR/EN</div>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="img/simon.jpg" class="profile-img rounded-circle" alt="Profile Image">
-                <h1 class="mt-4">Simon Nolet</h1>
-                <p class="lead">Offensive Security Specialist & Cybersecurity Educator</p>
-            </div>
-        </div>
+        .nav-toggle:hover {
+            background: var(--accent-green);
+            color: var(--bg-deep);
+        }
 
-        <div class="row">
-            <div class="col-lg-12">
-                <section id="about">
-                    <h2 class="section-header">About Me</h2>
-                    <p id="about-text">Simon Nolet is a cybersecurity professional with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains, leveraging automation and efficiency-driven habits and tooling to speedup security assessments. Over the course of his career, he has conducted more than 250 penetration tests, gaining a deep understanding of how organizations are compromised and the root causes that lead to security misconfiguration.
+        /* Main Content */
+        .main {
+            position: relative;
+            z-index: 10;
+        }
 
-                        To bridge the gap between theory and real-world cybersecurity, Simon founded Hacktive Education—an initiative dedicated to teaching beginners, system administrators, and cybersecurity enthusiasts practical security skills. His approach is based on proven methodologies that have successfully compromised hundreds of companies, with a focus on divergent thinking and understanding the root causes of vulnerabilities rather than just addressing surface-level issues.
-                        
-                        His expertise includes network infrastructure security, Active Directory pentesting, red teaming, access control evasion, and automation. While he integrates AI-driven automation to enhance efficiency in his work, he prioritizes human-driven decision-making and critical thinking.
-                        
-                        Committed to honesty, transparency, and integrity, Simon actively contributes to the cybersecurity community through training, workshops, and volunteer efforts at major events like Hackfest CTF. His mission is to equip individuals and organizations with practical security knowledge that goes beyond compliance—focusing on real-world defense strategies against adversaries.</p>
-                </section>
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
 
-                <section id="experience">
-                    <h2 class="section-header">Experience</h2>
-                    <p id="experience-text"><strong>Senior Advisor at Desjardins</strong><br>
-                    10 years of professional experience<br>
-                    Experienced in testing active directory, network infrastructures, and systems in large enterprise environments, specializing in identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.</p>
-                </section>
+        .hero-profile {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-green);
+            box-shadow:
+                0 0 0 4px var(--bg-deep),
+                0 0 40px var(--glow-green),
+                inset 0 0 20px rgba(0, 255, 136, 0.1);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            animation: float 6s ease-in-out infinite;
+        }
 
-                <section id="education">
-                    <h2 class="section-header">Education</h2>
-                    <p id="education-text"><strong>DEC - Diploma of College Studies (Network Management)</strong><br>
-                    Cégep Lévis-Lauzon</p>
-                </section>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-                <section id="certifications">
-                    <h2 class="section-header">Certifications</h2>
-                    <p id="certifications-text">Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)</p>
-                </section>
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: var(--fg-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
 
-                <section id="volunteering">
-                    <h2 class="section-header">Volunteering</h2>
-                    <ul id="volunteering-text">
-                        <li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li>
-                        <li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li>
-                        <li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li>
-                        <li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li>
-                        <li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>
-                    </ul>
-                </section>
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
 
-                <section id="presentations">
-                    <h2 class="section-header">Presentations</h2>
-                    <ul id="presentations-text">
-                        <li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li>
-                        <li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li>
-                        <li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li>
-                        <li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li>
-                        <li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li>
-                        <li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li>
-                        <li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li>
-                        <li><a href="https://www.youtube.com/watch?v=NdJgmZkvSgk&ab_channel=ProjectDiscovery">Community Spotlight</a> (February 2024 - Project Discovery)</li>
-                        <li><a href="https://www.youtube.com/watch?v=3S1ktBziKus&list=PLZRbR9aMzTTox6nTYQecprHtKUCX7eg57&index=9&ab_channel=ProjectDiscovery">Hardening your perimeter with open source tooling</a> (2024 - Project Discovery)</li>
-                        <li><a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ&ab_channel=HackfestCommunication">Using AI Locally - How to Keep Control of Your Data!</a> (July 2025 - Hackfest)</li>
-                    </ul>
-                </section>
+        .hero-title span {
+            color: var(--fg-muted);
+        }
 
-                <section id="research">
-                    <h2 class="section-header">Research</h2>
-                    <p id="research-text"><a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)</p>
-                </section>
+        .hero-mission {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--fg-muted);
+            max-width: 500px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
 
-                <section id="contact">
-                    <h2 class="section-header">Contact</h2>
-                    <p id="contact-text">LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a></p>
-                </section>
-            </div>
-        </div>
-    </div>
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function toggleLanguage() {
-            const lang = document.documentElement.lang;
-            if (lang === 'en') {
-                document.documentElement.lang = 'fr';
-                document.getElementById('about-text').innerText = "Simon Nolet est un expert en cybersécurité avec 10 ans d’expérience, dont 9 en sécurité offensive. Conseiller principal chez Desjardins, il se spécialise dans l’exploitation des chaînes d’attaque à fort impact, en misant sur l’automatisation et des méthodes efficaces pour accélérer les évaluations de sécurité. Avec plus de 250 tests d’intrusion à son actif, il possède une compréhension approfondie des façons dont les organisations se font compromettre et des causes réelles derrière les failles de sécurité. Pour rapprocher la théorie de la réalité terrain, il a fondé Hacktive Education, une initiative qui vise à former les admins systèmes, les professionnels IT et les passionnés de cybersécurité aux vraies techniques de sécurité offensive. Il enseigne une approche basée sur des méthodes qui ont prouvé leur efficacité en exposant des vulnérabilités critiques dans plusieurs entreprises. Son objectif est de développer la pensée divergente et de traiter les problèmes à la source, plutôt que d’appliquer des correctifs temporaires. Son expertise couvre la sécurité des infrastructures réseau, les tests d’intrusion Active Directory, le red teaming, l’évasion des contrôles d’accès et l’automatisation. Même s’il intègre des outils d’intelligence artificielle pour améliorer son efficacité, il met toujours l’accent sur l’analyse humaine et la prise de décision stratégique. Fidèle à ses valeurs d’intégrité, de transparence et de rigueur, Simon s’implique activement dans la communauté en partageant son expertise à travers des formations, des ateliers et du bénévolat lors d’événements majeurs comme le CTF du Hackfest. Sa mission : outiller les organisations et les professionnels avec des stratégies de défense qui vont au-delà de la simple conformité, en mettant l’accent sur des solutions adaptées aux menaces réelles.";
-                document.getElementById('experience-text').innerText = "Conseiller principal chez Desjardins, 10 ans d'expérience professionnelle, spécialisé dans les tests de réseaux, d'infrastructures et de systèmes dans des environnements d'entreprise de grande taille, identifiant les causes profondes et les utilisant pour créer des chaînes d'attaque et démontrer des scénarios à fort impact.";
-                document.getElementById('education-text').innerText = "DEC - Diplôme d'études collégiales (Gestion de réseau), Cégep Lévis-Lauzon";
-                document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (ID de la certification : OS-17788)";
-                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Designer de Challenge Hackfest</a> (7 ans)</li><li><a href="https://hfctf.ca/team/viper/">Piste Débutant</a> (5 ans)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 ans)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 ans)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 an)</li>';
-                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">Mon expérience de piratage de jeux vidéo</a> (Octobre 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">Mon expérience de piratage de jeux vidéo Partie 2</a> (Mai 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Exploitation des défauts d\'insécurité pour pirater la forêt</a> (29 août 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Escalade de privilèges Linux</a> (Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (Octobre 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration des homelabs</a> (Février 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (Mai 2024 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=NdJgmZkvSgk&ab_channel=ProjectDiscovery">Spotlight communautaire</a> (Février 2024 - Project Discovery)</li><li><a href="https://www.youtube.com/watch?v=3S1ktBziKus&list=PLZRbR9aMzTTox6nTYQecprHtKUCX7eg57&index=9&ab_channel=ProjectDiscovery">Durcissement de votre périmètre avec des outils open source</a> (2024 - Project Discovery)</li><li><a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ&ab_channel=HackfestCommunication">Utiliser l\'IA localement - Comment garder le contrôle de vos données!</a> (Juillet 2025 - Hackfest)</li>';
-                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Oubliez votre périmètre : RCE dans Pulse Connect Secure</a> (CVE-2020-8218)';
-                document.getElementById('contact-text').innerHTML = 'LinkedIn : <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
-            } else {
-                document.documentElement.lang = 'en';
-                document.getElementById('about-text').innerText = "Simon Nolet is a cybersecurity professional with 10 years of experience, specializing in offensive security for the past 9 years. As a Senior Advisor at Desjardins, he focuses on high-impact attack chains, leveraging automation and efficiency-driven habits and tooling to speedup security assessments. Over the course of his career, he has conducted more than 250 penetration tests, gaining a deep understanding of how organizations are compromised and the root causes that lead to security misconfiguration. To bridge the gap between theory and real-world cybersecurity, Simon founded Hacktive Education—an initiative dedicated to teaching beginners, system administrators, and cybersecurity enthusiasts practical security skills. His approach is based on proven methodologies that have successfully compromised hundreds of companies, with a focus on divergent thinking and understanding the root causes of vulnerabilities rather than just addressing surface-level issues. His expertise includes network infrastructure security, Active Directory pentesting, red teaming, access control evasion, and automation. While he integrates AI-driven automation to enhance efficiency in his work, he prioritizes human-driven decision-making and critical thinking. Committed to honesty, transparency, and integrity, Simon actively contributes to the cybersecurity community through training, workshops, and volunteer efforts at major events like Hackfest CTF. His mission is to equip individuals and organizations with practical security knowledge that goes beyond compliance—focusing on real-world defense strategies against adversaries.";
-                document.getElementById('experience-text').innerText = "Senior Advisor at Desjardins, 10 years of professional experience, experienced in testing network infrastructures, systems, and Active Directory in large enterprise environments, identifying root causes and leveraging them to create attack chains and demonstrate high-impact scenarios.";
-                document.getElementById('education-text').innerText = "DEC - Diploma of College Studies (Network Management), Cégep Lévis-Lauzon";
-                document.getElementById('certifications-text').innerText = "Offensive Security Certified Professional (OSCP) (Credential ID: OS-17788)";
-                document.getElementById('volunteering-text').innerHTML = '<li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a> (7 years)</li><li><a href="https://hfctf.ca/team/viper/">Beginner Track</a> (5 years)</li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103</a> (5 years)</li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a> (2 years)</li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a> (1 year)</li>';
-                document.getElementById('presentations-text').innerHTML = '<li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a> (October 2018 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Part 2</a> (May 2019 - Quebecsec)</li><li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a> (August 29, 2019 - GoSec)</li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html"> Privilege Escalation Linux </a>(Montrehack)</li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a> (October 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a> (February 2023 - Quebecsec)</li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et autodeploiement de homelab</a> (May 2024 - Quebecsec)</li><li><a href="https://www.youtube.com/watch?v=NdJgmZkvSgk&ab_channel=ProjectDiscovery">Community Spotlight</a> (February 2024 - Project Discovery)</li><li><a href="https://www.youtube.com/watch?v=3S1ktBziKus&list=PLZRbR9aMzTTox6nTYQecprHtKUCX7eg57&index=9&ab_channel=ProjectDiscovery">Hardening your perimeter with open source tooling</a> (2024 - Project Discovery)</li><li><a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ&ab_channel=HackfestCommunication">Using AI Locally - How to Keep Control of Your Data!</a> (July 2025 - Hackfest)</li>';
-                document.getElementById('research-text').innerHTML = '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/">Forget Your Perimeter: RCE in Pulse Connect Secure</a> (CVE-2020-8218)';
-                document.getElementById('contact-text').innerHTML = 'LinkedIn: <a href="https://linkedin.com/in/simon-nolet">Simon Nolet</a>';
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--fg-muted);
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--fg-muted);
+            font-size: 0.75rem;
+            font-family: var(--font-display);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-number {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            opacity: 0.6;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--fg-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-green), transparent);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--fg-secondary);
+            line-height: 1.9;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .experience-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .experience-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--bg-deep);
+            flex-shrink: 0;
+        }
+
+        .experience-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--fg-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-details p {
+            color: var(--fg-secondary);
+            line-height: 1.8;
+        }
+
+        /* AI Projects Grid */
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ai-card {
+            padding: 1.5rem;
+        }
+
+        .ai-card-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+        }
+
+        .ai-card h4 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--fg-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ai-card p {
+            font-size: 0.9rem;
+            color: var(--fg-secondary);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            font-size: 1.5rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-link {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--accent-cyan);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-deep);
+        }
+
+        .project-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--fg-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--fg-secondary);
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--fg-muted);
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        .tech-tag.live {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--accent-green);
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* List Styling */
+        .styled-list {
+            list-style: none;
+        }
+
+        .styled-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .styled-list li:last-child {
+            border-bottom: none;
+        }
+
+        .styled-list a {
+            color: var(--fg-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .styled-list a:hover {
+            color: var(--accent-green);
+        }
+
+        .list-meta {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--fg-muted);
+            white-space: nowrap;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Certification Badge */
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-md);
+        }
+
+        .cert-badge-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--bg-deep);
+            font-size: 0.8rem;
+        }
+
+        .cert-badge-info h4 {
+            font-family: var(--font-display);
+            color: var(--fg-primary);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-badge-info p {
+            font-size: 0.85rem;
+            color: var(--fg-muted);
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-green);
+            color: var(--bg-deep);
+            box-shadow: 0 0 30px var(--glow-green);
+        }
+
+        .contact-logo {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(5, 5, 8, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-value {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .experience-card {
+                flex-direction: column;
             }
         }
 
-        // Matrix code rain effect
-        const canvas = document.createElement('canvas');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        document.getElementById('code-rain').appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = Array.from({ length: columns }).map(() => 1);
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Canvas -->
+    <canvas class="matrix-canvas" id="matrix"></canvas>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">Viper</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#ai" class="nav-link">AI & Security</a></li>
+            <li><a href="#volunteering" class="nav-link">Community</a></li>
+            <li><a href="#presentations" class="nav-link">Talks</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="ai-portfolio.html" class="nav-link" style="color: var(--accent-cyan);">AI Portfolio →</a></li>
+            <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+        <button class="nav-toggle" id="langToggle" onclick="toggleLanguage()">EN/FR</button>
+    </nav>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="img/simon.jpg" alt="Simon Nolet" class="hero-profile">
+            <h1 class="hero-name">Simon Nolet</h1>
+            <p class="hero-title">AI Security Engineer <span>//</span> Offensive Mindset Educator</p>
+            <p class="hero-mission">Teaching security professionals how to leverage AI without losing critical thinking</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label" id="stat-years">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">250+</div>
+                    <div class="stat-label" id="stat-pentests">Penetration Tests</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label" id="stat-talks">Conference Talks</div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">[ scroll to explore ]</div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title" id="about-title">About</h2>
+                </div>
+                <div class="card about-content">
+                    <div class="about-text" id="about-text">
+                        <p><span class="highlight">Simon Nolet</span> is a cybersecurity professional with over 10 years of experience in offensive security. After conducting 250+ penetration tests and developing deep expertise in enterprise security assessments, he is now focused on a new mission: <strong>teaching security professionals how to integrate AI into their workflows without losing the critical thinking that makes them effective.</strong></p>
+                        <p>Through <span class="highlight">Hacktive Education</span>, Simon develops training that combines traditional security methodologies with modern AI-assisted workflows—accelerating learning, automating repetitive tasks, and focusing human expertise where it matters most.</p>
+                        <p>His philosophy: AI should <em>augment</em> security practitioners, not replace them. Practical, hands-on education. Real-world scenarios. Critical thinking always.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title" id="experience-title">Experience</h2>
+                </div>
+                <div class="card experience-card">
+                    <div class="experience-icon">DJ</div>
+                    <div class="experience-details">
+                        <h3 id="experience-role">Senior Advisor @ Desjardins</h3>
+                        <p id="experience-text">10+ years of professional experience in offensive security. Currently exploring how AI tools can enhance security assessments and education. Background in enterprise penetration testing, Active Directory security, and red team operations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & Security Section -->
+        <section class="section" id="ai">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title" id="ai-title">AI & Security Exploration</h2>
+                </div>
+                <div class="ai-grid">
+                    <div class="card ai-card">
+                        <div class="ai-card-icon">01</div>
+                        <h4 id="ai-1-title">AI-Assisted CTF Solving</h4>
+                        <p id="ai-1-text">Developing approaches to leverage AI for accelerating CTF challenge solving</p>
+                    </div>
+                    <div class="card ai-card">
+                        <div class="ai-card-icon">02</div>
+                        <h4 id="ai-2-title">Multi-Agent Orchestration</h4>
+                        <p id="ai-2-text">Building concepts for orchestrating multiple AI agents in security workflows</p>
+                    </div>
+                    <div class="card ai-card">
+                        <div class="ai-card-icon">03</div>
+                        <h4 id="ai-3-title">Adversarial AI Research</h4>
+                        <p id="ai-3-text">Exploring adversarial AI techniques and security validation methods</p>
+                    </div>
+                    <div class="card ai-card">
+                        <div class="ai-card-icon">04</div>
+                        <h4 id="ai-4-title">Educational Content</h4>
+                        <p id="ai-4-text">Creating content on AI-augmented security testing methodologies</p>
+                    </div>
+                    <div class="card ai-card">
+                        <div class="ai-card-icon">05</div>
+                        <h4 id="ai-5-title">LLM Integration</h4>
+                        <p id="ai-5-text">Experimenting with LLM integration in penetration testing workflows</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Community Involvement -->
+            <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 212, 255, 0.05)); border: 1px solid var(--border-accent); border-radius: var(--radius-md); display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
+                <a href="https://www.offensiveaicon.com/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(0, 255, 136, 0.1); border-radius: 100px; text-decoration: none; color: var(--accent-green); font-family: var(--font-display); font-size: 0.85rem;">
+                    <span style="font-size: 1rem;">🎫</span> Invited to Offensive AICon
+                </a>
+                <a href="https://dynamous.ai/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(0, 212, 255, 0.1); border-radius: 100px; text-decoration: none; color: var(--accent-cyan); font-family: var(--font-display); font-size: 0.85rem;">
+                    <span style="font-size: 1rem;">🌐</span> Dynamous Member
+                </a>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section class="section" id="credentials">
+            <div class="container">
+                <div class="two-col">
+                    <div>
+                        <div class="section-header">
+                            <span class="section-number">04</span>
+                            <h2 class="section-title" id="education-title">Education</h2>
+                        </div>
+                        <div class="card">
+                            <p id="education-text"><strong>DEC - Diploma of College Studies</strong><br>
+                            Network Management<br>
+                            <span style="color: var(--fg-muted);">Cegep Levis-Lauzon</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-header">
+                            <span class="section-number">05</span>
+                            <h2 class="section-title" id="cert-title">Certification</h2>
+                        </div>
+                        <div class="card">
+                            <div class="cert-badge">
+                                <div class="cert-badge-icon">OSCP</div>
+                                <div class="cert-badge-info">
+                                    <h4>Offensive Security Certified Professional</h4>
+                                    <p>Credential ID: OS-17788</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+        <section class="section" id="volunteering">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title" id="volunteering-title">Community Contributions</h2>
+                </div>
+                <div class="card">
+                    <ul class="styled-list" id="volunteering-list">
+                        <li>
+                            <a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a>
+                            <span class="tag">7 years</span>
+                        </li>
+                        <li>
+                            <a href="https://hfctf.ca/team/viper/">Beginner Track</a>
+                            <span class="tag">5 years</span>
+                        </li>
+                        <li>
+                            <a href="https://hackfest.ca/fr/formations/sec103/">Sec 103 Training</a>
+                            <span class="tag">5 years</span>
+                        </li>
+                        <li>
+                            <a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a>
+                            <span class="tag">2 years</span>
+                        </li>
+                        <li>
+                            <a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a>
+                            <span class="tag">1 year</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentations Section -->
+        <section class="section" id="presentations">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <h2 class="section-title" id="presentations-title">Presentations & Talks</h2>
+                </div>
+                <div class="card">
+                    <ul class="styled-list" id="presentations-list">
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ">Using AI Locally - Keep Control of Your Data</a>
+                            <span class="list-meta">2025 / Hackfest</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=3S1ktBziKus">Hardening Your Perimeter with Open Source Tooling</a>
+                            <span class="list-meta">2024 / Project Discovery</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=NdJgmZkvSgk">Community Spotlight</a>
+                            <span class="list-meta">2024 / Project Discovery</span>
+                        </li>
+                        <li>
+                            <a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et Autodeploiement de Homelab</a>
+                            <span class="list-meta">2024 / Quebecsec</span>
+                        </li>
+                        <li>
+                            <a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a>
+                            <span class="list-meta">2023 / Quebecsec</span>
+                        </li>
+                        <li>
+                            <a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a>
+                            <span class="list-meta">2023 / Quebecsec</span>
+                        </li>
+                        <li>
+                            <a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Privilege Escalation Linux</a>
+                            <span class="list-meta">2023 / Montrehack</span>
+                        </li>
+                        <li>
+                            <a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a>
+                            <span class="list-meta">2019 / GoSec</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Pt. 2</a>
+                            <span class="list-meta">2019 / Quebecsec</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a>
+                            <span class="list-meta">2018 / Quebecsec</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section class="section" id="research">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <h2 class="section-title" id="research-title">Research</h2>
+                </div>
+                <div class="card">
+                    <p id="research-text">
+                        <a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/" style="color: var(--accent-green); font-weight: 600;">Forget Your Perimeter: RCE in Pulse Connect Secure</a>
+                        <br><span style="color: var(--fg-muted); font-size: 0.9rem;">CVE-2020-8218</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <h2 class="section-title" id="contact-title">Get in Touch</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="https://linkedin.com/in/simon-nolet" class="contact-btn" target="_blank">
+                        <svg class="contact-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/@hacktiveeducation" class="contact-btn" target="_blank">
+                        <svg class="contact-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://www.skool.com/hacktive-education-4611" class="contact-btn" target="_blank">
+                        <svg class="contact-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.8a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zm0 2.4a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 2.4a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8z"/></svg>
+                        <span>Skool</span>
+                    </a>
+                    <a href="https://github.com/ViperBlackSkull" class="contact-btn" target="_blank">
+                        <svg class="contact-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://hacktive.education" class="contact-btn" target="_blank">
+                        <svg class="contact-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                        <span>Hacktive Education</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">// Built with passion for cybersecurity education //</p>
+        </footer>
+    </main>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const fontSize = 14;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = Array(columns).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(5, 5, 8, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#0f0';
-            ctx.font = `${fontSize}px Arial`;
+
+            ctx.fillStyle = '#00ff88';
+            ctx.font = `${fontSize}px JetBrains Mono, monospace`;
+
             for (let i = 0; i < drops.length; i++) {
-                const text = letters[Math.floor(Math.random() * letters.length)];
+                const text = chars[Math.floor(Math.random() * chars.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
                 drops[i]++;
             }
         }
-        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+        });
+
+        setInterval(drawMatrix, 50);
+
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Section reveal on scroll
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Language Toggle
+        const translations = {
+            en: {
+                statYears: "Years Experience",
+                statPentests: "Penetration Tests",
+                statTalks: "Conference Talks",
+                aboutTitle: "About",
+                aboutText: '<p><span class="highlight">Simon Nolet</span> is a cybersecurity professional with over 10 years of experience in offensive security. After conducting 250+ penetration tests and developing deep expertise in enterprise security assessments, he is now focused on a new mission: <strong>teaching security professionals how to integrate AI into their workflows without losing the critical thinking that makes them effective.</strong></p><p>Through <span class="highlight">Hacktive Education</span>, Simon develops training that combines traditional security methodologies with modern AI-assisted workflows—accelerating learning, automating repetitive tasks, and focusing human expertise where it matters most.</p><p>His philosophy: AI should <em>augment</em> security practitioners, not replace them. Practical, hands-on education. Real-world scenarios. Critical thinking always.</p>',
+                heroMission: "Teaching security professionals how to leverage AI without losing critical thinking",
+                experienceTitle: "Experience",
+                experienceRole: "Senior Advisor @ Desjardins",
+                experienceText: "10+ years of professional experience in offensive security. Currently exploring how AI tools can enhance security assessments and education. Background in enterprise penetration testing, Active Directory security, and red team operations. Invited attendee at Offensive AICon. Member of the Dynamous community.",
+                aiTitle: "AI & Security Exploration",
+                ai1Title: "AI-Assisted CTF Solving",
+                ai1Text: "Developing approaches to leverage AI for accelerating CTF challenge solving",
+                ai2Title: "Multi-Agent Orchestration",
+                ai2Text: "Building concepts for orchestrating multiple AI agents in security workflows",
+                ai3Title: "Adversarial AI Research",
+                ai3Text: "Exploring adversarial AI techniques and security validation methods",
+                ai4Title: "Educational Content",
+                ai4Text: "Creating content on AI-augmented security testing methodologies",
+                ai5Title: "LLM Integration",
+                ai5Text: "Experimenting with LLM integration in penetration testing workflows",
+                educationTitle: "Education",
+                educationText: '<strong>DEC - Diploma of College Studies</strong><br>Network Management<br><span style="color: var(--fg-muted);">Cegep Levis-Lauzon</span>',
+                certTitle: "Certification",
+                volunteeringTitle: "Community Contributions",
+                volunteeringList: '<li><a href="https://hfctf.ca/team/viper/">Hackfest Challenge Designer</a><span class="tag">7 years</span></li><li><a href="https://hfctf.ca/team/viper/">Beginner Track</a><span class="tag">5 years</span></li><li><a href="https://hackfest.ca/fr/formations/sec103/">Sec 103 Training</a><span class="tag">6 years</span></li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a><span class="tag">3 years</span></li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a><span class="tag">1 year</span></li>',
+                presentationsTitle: "Presentations & Talks",
+                presentationsList: '<li><a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ">Using AI Locally - Keep Control of Your Data</a><span class="list-meta">2025 / Hackfest</span></li><li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Hardening Your Perimeter with Open Source Tooling</a><span class="list-meta">2024 / Project Discovery</span></li><li><a href="https://www.youtube.com/watch?v=NdJgmZkvSgk">Community Spotlight</a><span class="list-meta">2024 / Project Discovery</span></li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et Autodeploiement de Homelab</a><span class="list-meta">2024 / Quebecsec</span></li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a><span class="list-meta">2023 / Quebecsec</span></li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration of Homelabs</a><span class="list-meta">2023 / Quebecsec</span></li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Privilege Escalation Linux</a><span class="list-meta">2023 / Montrehack</span></li><li><a href="https://gosec.net/">Abusing Insecure Defaults to Crack the Forest</a><span class="list-meta">2019 / GoSec</span></li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">My Experience Hacking Video Games Pt. 2</a><span class="list-meta">2019 / Quebecsec</span></li><li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">My Experience Hacking Video Games</a><span class="list-meta">2018 / Quebecsec</span></li>',
+                researchTitle: "Research",
+                researchText: '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/" style="color: var(--accent-green); font-weight: 600;">Forget Your Perimeter: RCE in Pulse Connect Secure</a><br><span style="color: var(--fg-muted); font-size: 0.9rem;">CVE-2020-8218</span>',
+                contactTitle: "Get in Touch",
+                langToggle: "EN/FR"
+            },
+            fr: {
+                statYears: "Annees d'experience",
+                statPentests: "Tests d'intrusion",
+                statTalks: "Conferences",
+                aboutTitle: "A propos",
+                aboutText: '<p><span class="highlight">Simon Nolet</span> est un professionnel de la cybersecurite avec plus de 10 ans d\'experience en securite offensive. Apres avoir effectue plus de 250 tests d\'intrusion et developpe une expertise approfondie en evaluations de securite d\'entreprise, il se concentre maintenant sur une nouvelle mission : <strong>enseigner aux professionnels de la securite comment integrer l\'IA dans leurs workflows sans perdre la pensee critique qui les rend efficaces.</strong></p><p>A travers <span class="highlight">Hacktive Education</span>, Simon developpe des formations qui combinent les methodologies de securite traditionnelles avec les workflows modernes assistes par l\'IA—accelerer l\'apprentissage, automatiser les taches repetitives et concentrer l\'expertise humaine la ou elle compte le plus.</p><p>Sa philosophie : l\'IA doit <em>augmenter</em> les praticiens de la securite, pas les remplacer. Education pratique. Scenarios reels. Pensee critique toujours.</p>',
+                heroMission: "Enseigner aux professionnels de la securite comment exploiter l'IA sans perdre la pensee critique",
+                experienceTitle: "Experience",
+                experienceRole: "Conseiller principal @ Desjardins",
+                experienceText: "Plus de 10 ans d'experience professionnelle en securite offensive. Explore actuellement comment les outils d'IA peuvent ameliorer les evaluations de securite et l'education. Expertise en tests d'intrusion d'entreprise, securite Active Directory et operations de red team. Invite a Offensive AICon. Membre de la communaute Dynamous.",
+                aiTitle: "Exploration IA & Securite",
+                ai1Title: "Resolution CTF Assistee par IA",
+                ai1Text: "Developpement d'approches pour utiliser l'IA dans la resolution de defis CTF",
+                ai2Title: "Orchestration Multi-Agents",
+                ai2Text: "Construction de concepts pour orchestrer plusieurs agents IA dans les workflows de securite",
+                ai3Title: "Recherche en IA Adversariale",
+                ai3Text: "Exploration des techniques d'IA adversariale et methodes de validation de securite",
+                ai4Title: "Contenu Educatif",
+                ai4Text: "Creation de contenu sur les methodologies de test de securite augmentees par l'IA",
+                ai5Title: "Integration LLM",
+                ai5Text: "Experimentation avec l'integration LLM dans les workflows de tests d'intrusion",
+                educationTitle: "Education",
+                educationText: '<strong>DEC - Diplome d\'etudes collegiales</strong><br>Gestion de reseau<br><span style="color: var(--fg-muted);">Cegep Levis-Lauzon</span>',
+                certTitle: "Certification",
+                volunteeringTitle: "Contributions Communautaires",
+                volunteeringList: '<li><a href="https://hfctf.ca/team/viper/">Designer de Challenges Hackfest</a><span class="tag">7 ans</span></li><li><a href="https://hfctf.ca/team/viper/">Piste Debutant</a><span class="tag">5 ans</span></li><li><a href="https://hackfest.ca/fr/formations/sec103/">Formation Sec 103</a><span class="tag">6 ans</span></li><li><a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a><span class="tag">3 ans</span></li><li><a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a><span class="tag">1 an</span></li>',
+                presentationsTitle: "Presentations & Conferences",
+                presentationsList: '<li><a href="https://www.youtube.com/watch?v=J6EiHTx9_dQ">Utiliser l\'IA Localement - Garder le Controle de Vos Donnees</a><span class="list-meta">2025 / Hackfest</span></li><li><a href="https://www.youtube.com/watch?v=3S1ktBziKus">Durcir Votre Perimetre avec des Outils Open Source</a><span class="list-meta">2024 / Project Discovery</span></li><li><a href="https://www.youtube.com/watch?v=NdJgmZkvSgk">Spotlight Communautaire</a><span class="list-meta">2024 / Project Discovery</span></li><li><a href="https://quebecsec.ca/event/Automatisationautodeploiementhomelab.html">Automatisation et Autodeploiement de Homelab</a><span class="list-meta">2024 / Quebecsec</span></li><li><a href="https://quebecsec.ca/event/retour-hf.html">Retour sur le Hackfest</a><span class="list-meta">2023 / Quebecsec</span></li><li><a href="https://quebecsec.ca/event/homelabs.html">Exploration des Homelabs</a><span class="list-meta">2023 / Quebecsec</span></li><li><a href="https://montrehack.ca/2023/04/19/viper-intro-linux-privesc.html">Escalade de Privileges Linux</a><span class="list-meta">2023 / Montrehack</span></li><li><a href="https://gosec.net/">Exploitation des Defauts d\'Insecurite pour Pirater la Foret</a><span class="list-meta">2019 / GoSec</span></li><li><a href="https://www.youtube.com/watch?v=zK1vYK1uSes">Mon Experience de Piratage de Jeux Video Pt. 2</a><span class="list-meta">2019 / Quebecsec</span></li><li><a href="https://www.youtube.com/watch?v=OCfaZbqLEo8">Mon Experience de Piratage de Jeux Video</a><span class="list-meta">2018 / Quebecsec</span></li>',
+                researchTitle: "Recherche",
+                researchText: '<a href="https://gosecure.ai/blog/2020/08/26/forget-your-perimeterrce-in-pulse-connect-secure-cve-2020-8218/" style="color: var(--accent-green); font-weight: 600;">Oubliez Votre Perimetre : RCE dans Pulse Connect Secure</a><br><span style="color: var(--fg-muted); font-size: 0.9rem;">CVE-2020-8218</span>',
+                contactTitle: "Me Contacter",
+                langToggle: "FR/EN"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+
+            document.getElementById('stat-years').textContent = t.statYears;
+            document.getElementById('stat-pentests').textContent = t.statPentests;
+            document.getElementById('stat-talks').textContent = t.statTalks;
+            document.querySelector('.hero-mission').textContent = t.heroMission;
+            document.getElementById('about-title').textContent = t.aboutTitle;
+            document.getElementById('about-text').innerHTML = t.aboutText;
+            document.getElementById('experience-title').textContent = t.experienceTitle;
+            document.getElementById('experience-role').textContent = t.experienceRole;
+            document.getElementById('experience-text').textContent = t.experienceText;
+            document.getElementById('ai-title').textContent = t.aiTitle;
+            document.getElementById('ai-1-title').textContent = t.ai1Title;
+            document.getElementById('ai-1-text').textContent = t.ai1Text;
+            document.getElementById('ai-2-title').textContent = t.ai2Title;
+            document.getElementById('ai-2-text').textContent = t.ai2Text;
+            document.getElementById('ai-3-title').textContent = t.ai3Title;
+            document.getElementById('ai-3-text').textContent = t.ai3Text;
+            document.getElementById('ai-4-title').textContent = t.ai4Title;
+            document.getElementById('ai-4-text').textContent = t.ai4Text;
+            document.getElementById('ai-5-title').textContent = t.ai5Title;
+            document.getElementById('ai-5-text').textContent = t.ai5Text;
+            document.getElementById('education-title').textContent = t.educationTitle;
+            document.getElementById('education-text').innerHTML = t.educationText;
+            document.getElementById('cert-title').textContent = t.certTitle;
+            document.getElementById('volunteering-title').textContent = t.volunteeringTitle;
+            document.getElementById('volunteering-list').innerHTML = t.volunteeringList;
+            document.getElementById('presentations-title').textContent = t.presentationsTitle;
+            document.getElementById('presentations-list').innerHTML = t.presentationsList;
+            document.getElementById('research-title').textContent = t.researchTitle;
+            document.getElementById('research-text').innerHTML = t.researchText;
+            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('langToggle').textContent = t.langToggle;
+        }
+
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang || 'en';
+            const newLang = currentLang === 'en' ? 'fr' : 'en';
+            setLanguage(newLang);
+        }
+
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'en';
+            if (savedLang !== 'en') {
+                setLanguage(savedLang);
+            }
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Support | Simon Nolet - Recommended Tools & Services</title>
+    <meta name="title" content="Support | Simon Nolet - Recommended Tools & Services">
+    <meta name="description" content="Services and tools I use and recommend for cybersecurity professionals and AI-assisted development. Fizz telecom, Z.AI GLM for coding tools.">
+    <meta name="keywords" content="Simon Nolet, recommended tools, cybersecurity tools, AI development, GLM, Fizz, referral links">
+    <meta name="author" content="Simon Nolet">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://viperblackskull.github.io/support.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viperblackskull.github.io/support.html">
+    <meta property="og:title" content="Support | Simon Nolet - Recommended Tools">
+    <meta property="og:description" content="Services and tools I use and recommend for cybersecurity and AI-assisted development.">
+    <meta property="og:image" content="https://viperblackskull.github.io/img/simon.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://viperblackskull.github.io/support.html">
+    <meta name="twitter:title" content="Support | Simon Nolet">
+    <meta name="twitter:description" content="Services and tools I use and recommend for cybersecurity and AI-assisted development.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050508;
+            --bg-surface: #0c0c10;
+            --bg-card: rgba(15, 15, 20, 0.7);
+            --fg-primary: #e8e8ec;
+            --fg-secondary: #8a8a96;
+            --fg-muted: #5a5a66;
+            --accent-green: #00ff88;
+            --accent-green-dim: #00cc6a;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(0, 255, 136, 0.2);
+            --glow-green: rgba(0, 255, 136, 0.15);
+            --glow-cyan: rgba(0, 212, 255, 0.1);
+            --font-display: 'JetBrains Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg-deep);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: transparent;
+            color: var(--fg-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Matrix Rain Background */
+        .matrix-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* Ambient Background Effects */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 20%, var(--glow-green), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 80%, var(--glow-cyan), transparent);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background-image:
+                linear-gradient(var(--border-subtle) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--bg-deep), transparent);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(5, 5, 8, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo::before {
+            content: '>';
+            color: var(--accent-cyan);
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--fg-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-green);
+            background: rgba(0, 255, 136, 0.08);
+        }
+
+        .nav-link.active {
+            color: var(--accent-green);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .nav-toggle {
+            background: transparent;
+            border: 1px solid var(--border-accent);
+            color: var(--accent-green);
+            padding: 0.5rem 1rem;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .nav-toggle:hover {
+            background: var(--accent-green);
+            color: var(--bg-deep);
+        }
+
+        /* Main Content */
+        .main {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 2rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            color: var(--fg-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--fg-secondary);
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .disclosure {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+            font-family: var(--font-display);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Support Card */
+        .support-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .support-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .support-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Company Logo */
+        .company-logo {
+            margin-bottom: 1.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        /* Card Content */
+        .card-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: var(--fg-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Referral Button */
+        .referral-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .referral-btn:hover {
+            background: var(--accent-green);
+            color: var(--bg-deep);
+            box-shadow: 0 0 30px var(--glow-green);
+        }
+
+        .referral-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .card-disclosure {
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            color: var(--fg-muted);
+            font-family: var(--font-display);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+        }
+
+        .footer-text a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(5, 5, 8, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Canvas -->
+    <canvas class="matrix-canvas" id="matrix"></canvas>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav-logo">Viper</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+            <li><a href="index.html#ai" class="nav-link">AI & Security</a></li>
+            <li><a href="index.html#volunteering" class="nav-link">Community</a></li>
+            <li><a href="index.html#presentations" class="nav-link">Talks</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            <li><a href="support.html" class="nav-link active">Support</a></li>
+        </ul>
+        <button class="nav-toggle" id="langToggle" onclick="toggleLanguage()">EN/FR</button>
+    </nav>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title" id="hero-title">Support</h1>
+            <p class="hero-subtitle" id="hero-subtitle">Services I use and recommend. These referral links help support my work at no extra cost to you.</p>
+            <p class="disclosure" id="disclosure">// Transparency: I may receive benefits from these links //</p>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="section">
+            <div class="container">
+                <div class="cards-grid">
+                    <!-- Fizz Card -->
+                    <div class="support-card">
+                        <div class="company-logo">
+                            <img src="https://fizz.ca/themes/bookmark_2018/images/icons/fizz-white.svg" alt="Fizz" class="logo-img">
+                        </div>
+                        <span class="card-category" id="fizz-category">Telecom</span>
+                        <p class="card-description" id="fizz-description">
+                            Reliable mobile and internet at a fair price. I've been a Fizz customer for years—their no-contract approach and flexible plans work great.
+                        </p>
+                        <a href="#" class="referral-btn disabled" id="fizz-btn">
+                            <span id="fizz-btn-text">Coming Soon</span>
+                            <span>→</span>
+                        </a>
+                        <p class="card-disclosure" id="fizz-disclosure">Referral link coming soon</p>
+                    </div>
+
+                    <!-- Z.AI / GLM Card -->
+                    <div class="support-card">
+                        <div class="company-logo">
+                            <img src="https://www.zhipuai.cn/logo-en-white.svg" alt="Zhipu AI GLM" class="logo-img">
+                        </div>
+                        <span class="card-category" id="zai-category">AI</span>
+                        <p class="card-description" id="zai-description">
+                            Full support for Claude Code, Cline, and 20+ coding tools starting at $10/month. Great for AI-assisted development workflows.
+                        </p>
+                        <a href="https://z.ai/subscribe?ic=6BVMMFNPPQ" class="referral-btn" target="_blank" rel="noopener">
+                            <span id="zai-btn-text">Get GLM Plan</span>
+                            <span>→</span>
+                        </a>
+                        <p class="card-disclosure" id="zai-disclosure">Referral link - limited time deal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                <a href="index.html">← Back to Portfolio</a>
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const fontSize = 14;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = Array(columns).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(5, 5, 8, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff88';
+            ctx.font = `${fontSize}px JetBrains Mono, monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+        });
+
+        setInterval(drawMatrix, 50);
+
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Language Toggle
+        const translations = {
+            en: {
+                heroTitle: "Support",
+                heroSubtitle: "Services I use and recommend. These referral links help support my work at no extra cost to you.",
+                disclosure: "// Transparency: I may receive benefits from these links //",
+                fizzCategory: "Telecom",
+                fizzDescription: "Reliable mobile and internet at a fair price. I've been a Fizz customer for years—their no-contract approach and flexible plans work great.",
+                fizzBtnText: "Coming Soon",
+                fizzDisclosure: "Referral link coming soon",
+                zaiCategory: "AI",
+                zaiDescription: "Full support for Claude Code, Cline, and 20+ coding tools starting at $10/month. Great for AI-assisted development workflows.",
+                zaiBtnText: "Get GLM Plan",
+                zaiDisclosure: "Referral link - limited time deal",
+                langToggle: "EN/FR"
+            },
+            fr: {
+                heroTitle: "Soutien",
+                heroSubtitle: "Services que j'utilise et recommande. Ces liens de parrainage aident a soutenir mon travail sans frais supplementaires pour vous.",
+                disclosure: "// Transparence : Je peux recevoir des avantages de ces liens //",
+                fizzCategory: "Telecom",
+                fizzDescription: "Mobile et internet fiables a un prix equitable. Client Fizz depuis des annees - leur approche sans contrat et les forfaits flexibles fonctionnent tres bien.",
+                fizzBtnText: "Bientot disponible",
+                fizzDisclosure: "Lien de parrainage a venir",
+                zaiCategory: "IA",
+                zaiDescription: "Support complet pour Claude Code, Cline et plus de 20 outils de codage a partir de 10$/mois. Excellent pour les workflows de developpement assistes par IA.",
+                zaiBtnText: "Obtenir le plan GLM",
+                zaiDisclosure: "Lien de parrainage - offre a duree limitee",
+                langToggle: "FR/EN"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('disclosure').textContent = t.disclosure;
+            document.getElementById('fizz-category').textContent = t.fizzCategory;
+            document.getElementById('fizz-description').textContent = t.fizzDescription;
+            document.getElementById('fizz-btn-text').textContent = t.fizzBtnText;
+            document.getElementById('fizz-disclosure').textContent = t.fizzDisclosure;
+            document.getElementById('zai-category').textContent = t.zaiCategory;
+            document.getElementById('zai-description').textContent = t.zaiDescription;
+            document.getElementById('zai-btn-text').textContent = t.zaiBtnText;
+            document.getElementById('zai-disclosure').textContent = t.zaiDisclosure;
+            document.getElementById('langToggle').textContent = t.langToggle;
+        }
+
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang || 'en';
+            const newLang = currentLang === 'en' ? 'fr' : 'en';
+            setLanguage(newLang);
+        }
+
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'en';
+            if (savedLang !== 'en') {
+                setLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
