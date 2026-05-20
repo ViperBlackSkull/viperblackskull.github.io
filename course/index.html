@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Red Teaming Course — Learn to Hack AI Systems</title>
+    <meta name="description" content="Hands-on AI red teaming course. Learn prompt injection, RAG poisoning, adversarial attacks, and agent hijacking. OSCP-certified instructor. $7.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0a0f;
+            --bg-surface: #111118;
+            --bg-elevated: #1a1a24;
+            --bg-card: #14141e;
+            --border: #2a2a3a;
+            --border-subtle: #1e1e2e;
+            --ink: #e8e8f0;
+            --ink-muted: #8888a0;
+            --ink-dim: #55556a;
+            --neon-green: #00ff88;
+            --neon-green-dim: #00cc6a;
+            --neon-cyan: #00e5ff;
+            --neon-cyan-dim: #00b8cc;
+            --glow-green: rgba(0, 255, 136, 0.15);
+            --glow-cyan: rgba(0, 229, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg-deep);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Scanline overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.03) 2px,
+                rgba(0, 0, 0, 0.03) 4px
+            );
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 15, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--neon-green);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        nav .logo span { color: var(--ink-dim); }
+        nav .nav-cta {
+            background: var(--neon-green);
+            color: var(--bg-deep);
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+        nav .nav-cta:hover {
+            box-shadow: 0 0 20px var(--glow-green);
+            transform: translateY(-1px);
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--glow-green) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 6px 16px;
+            border-radius: 3px;
+            margin-bottom: 28px;
+            background: rgba(0, 229, 255, 0.05);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        .hero h1 .accent-green { color: var(--neon-green); }
+        .hero h1 .accent-cyan { color: var(--neon-cyan); }
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--ink-muted);
+            max-width: 540px;
+            margin: 0 auto 40px;
+        }
+        .hero-price {
+            margin-bottom: 32px;
+        }
+        .hero-price .amount {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            line-height: 1;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hero-price .period {
+            color: var(--ink-dim);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+        .hero-price .original {
+            color: var(--ink-dim);
+            text-decoration: line-through;
+            font-size: 1.1rem;
+            margin-right: 8px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--neon-green);
+            color: var(--bg-deep);
+            padding: 18px 48px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.05rem;
+            transition: box-shadow 0.25s, transform 0.15s;
+            letter-spacing: 0.01em;
+        }
+        .cta-btn:hover {
+            box-shadow: 0 0 30px var(--glow-green), 0 0 60px rgba(0, 255, 136, 0.08);
+            transform: translateY(-2px);
+        }
+        .hero-sub {
+            color: var(--ink-dim);
+            font-size: 0.8rem;
+            margin-top: 16px;
+        }
+
+        /* ---- PROBLEM ---- */
+        .problem {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .problem h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .problem .section-sub {
+            color: var(--ink-muted);
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto 32px;
+        }
+        .threat-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .threat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px 24px;
+            border-left: 3px solid var(--neon-green);
+            transition: border-color 0.2s;
+        }
+        .threat-card:hover {
+            border-left-color: var(--neon-cyan);
+        }
+        .threat-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: 0.03em;
+        }
+        .threat-card p {
+            color: var(--ink-muted);
+            font-size: 0.9rem;
+        }
+        .threat-card .tag {
+            color: var(--ink-dim);
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        /* ---- MODULES ---- */
+        .modules {
+            padding: 80px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .modules h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .modules .section-sub {
+            color: var(--ink-muted);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .module-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .module-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .module-item:last-child { border-bottom: none; }
+        .module-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            min-width: 36px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .module-content h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .module-content p {
+            color: var(--ink-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ---- INSTRUCTOR ---- */
+        .instructor {
+            padding: 80px 0;
+        }
+        .instructor h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .creds-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto 28px;
+        }
+        .cred-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 18px 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .cred-card .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-dim);
+            margin-bottom: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .cred-card .value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .instructor-bio {
+            color: var(--ink-muted);
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        /* ---- FAQ ---- */
+        .faq {
+            padding: 80px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .faq h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item summary {
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::after {
+            content: '+';
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-green);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item p {
+            color: var(--ink-muted);
+            margin-top: 8px;
+            font-size: 0.9rem;
+            padding-right: 32px;
+        }
+
+        /* ---- FINAL CTA ---- */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 400px;
+            background: radial-gradient(circle, var(--glow-green) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .final-cta h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .final-cta .subtitle {
+            color: var(--ink-muted);
+            margin-bottom: 36px;
+            font-size: 1.05rem;
+        }
+        .final-cta .price-tag {
+            margin-bottom: 28px;
+        }
+        .final-cta .price-tag .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            padding: 28px 0;
+            text-align: center;
+            color: var(--ink-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        footer a {
+            color: var(--ink-muted);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--neon-green); }
+
+        /* ---- RESPONSIVE ---- */
+        @media (min-width: 640px) {
+            .threat-grid { grid-template-columns: 1fr 1fr; }
+            .creds-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        }
+
+        @media (max-width: 639px) {
+            .hero h1 { font-size: 2.1rem; }
+            .hero-price .amount { font-size: 3rem; }
+            .final-cta h2 { font-size: 1.6rem; }
+            nav .logo { font-size: 0.75rem; }
+        }
+
+        /* ---- ANIMATIONS ---- */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px var(--glow-green); }
+            50% { box-shadow: 0 0 35px var(--glow-green), 0 0 60px rgba(0, 255, 136, 0.06); }
+        }
+        .cta-btn {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-btn { animation: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ---- TERMINAL DECORATION ---- */
+        .terminal-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 32px auto;
+            max-width: 480px;
+        }
+        .terminal-bar {
+            background: var(--bg-elevated);
+            padding: 8px 14px;
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .terminal-dot.red { background: #ff5f57; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #28c840; }
+        .terminal-body {
+            padding: 16px 18px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            line-height: 1.8;
+            color: var(--ink-muted);
+        }
+        .terminal-body .prompt { color: var(--neon-green); }
+        .terminal-body .cmd { color: #fff; }
+        .terminal-body .output { color: var(--ink-muted); }
+        .terminal-body .flag { color: var(--neon-cyan); }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <div class="container">
+        <div class="logo">HACKTIVE<span>.EDUCATION</span></div>
+        <a href="#enroll" class="nav-cta">Enroll — $7</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-tag">Self-Paced Online Course</div>
+        <h1>Learn to <span class="accent-green">Red Team</span><br>AI Systems</h1>
+        <p class="subtitle">The hands-on course that teaches you to break into AI — prompt injection, data exfiltration, agent hijacking, and more.</p>
+
+        <div class="hero-price">
+            <span class="original">$49</span>
+            <span class="amount">$7</span>
+            <div class="period">Launch price · Lifetime access</div>
+        </div>
+
+        <a href="#enroll" class="cta-btn">Get the Course →</a>
+        <div class="hero-sub">Instant access · No subscriptions · 30-day money-back guarantee</div>
+    </div>
+</section>
+
+<!-- Terminal decoration -->
+<div class="container">
+    <div class="terminal-block">
+        <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+        </div>
+        <div class="terminal-body">
+            <span class="prompt">❯</span> <span class="cmd">ai-redteam</span> <span class="flag">--target</span> <span class="output">chatbot.example.com</span><br>
+            <span class="output">[+] Scanning for prompt injection vectors...</span><br>
+            <span class="output">[+] Found 4 exploitable endpoints</span><br>
+            <span class="output">[+] Extracting system prompt... </span><span class="flag">SUCCESS</span><br>
+            <span class="output">[+] Exfiltrating training data via indirect injection</span><br>
+            <span class="prompt">❯</span> <span class="output">3 vulnerabilities confirmed</span>
+        </div>
+    </div>
+</div>
+
+<!-- Problem -->
+<section class="problem">
+    <div class="container">
+        <h2>AI Systems Are Under Attack</h2>
+        <p class="section-sub">Your WAF doesn't catch prompt injection. Your SIEM doesn't flag data exfiltration through AI. Traditional security leaves AI blind spots wide open.</p>
+        <div class="threat-grid">
+            <div class="threat-card">
+                <h3>Prompt Injection</h3>
+                <p>Crafted inputs that bypass AI safety controls and extract sensitive data.</p>
+                <div class="tag">// the new SQL injection — but worse</div>
+            </div>
+            <div class="threat-card">
+                <h3>RAG Poisoning</h3>
+                <p>Manipulating retrieval data to make your AI confidently lie to users.</p>
+                <div class="tag">// your knowledge base is the attack surface</div>
+            </div>
+            <div class="threat-card">
+                <h3>Agent Hijacking</h3>
+                <p>Turning autonomous AI agents into tools for the attacker.</p>
+                <div class="tag">// your AI assistant works for them now</div>
+            </div>
+            <div class="threat-card">
+                <h3>Data Exfiltration</h3>
+                <p>Stealing training data, user conversations, and internal docs through AI outputs.</p>
+                <div class="tag">// no firewall blocks what the AI sends out</div>
+            </div>
+            <div class="threat-card">
+                <h3>Model Supply Chain</h3>
+                <p>Compromised models, poisoned weights, backdoored fine-tunes.</p>
+                <div class="tag">// like a compromised npm package — but it thinks</div>
+            </div>
+            <div class="threat-card">
+                <h3>Adversarial Inputs</h3>
+                <p>Perturbed data that fools AI into wrong decisions at inference time.</p>
+                <div class="tag">// your fraud detector says "looks clean" — it's not</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modules -->
+<section class="modules">
+    <div class="container">
+        <h2>What You'll Learn</h2>
+        <p class="section-sub">8 modules. Real labs. No fluff.</p>
+        <div class="module-list">
+            <div class="module-item">
+                <div class="module-num">01</div>
+                <div class="module-content">
+                    <h3>AI Threat Landscape</h3>
+                    <p>What's real, what's hype, and what's coming next. Framework for thinking about AI attacks.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">02</div>
+                <div class="module-content">
+                    <h3>Prompt Injection Deep Dive</h3>
+                    <p>Direct and indirect injection techniques. Hands-on lab against a real LLM application.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">03</div>
+                <div class="module-content">
+                    <h3>Data Exfiltration Through AI</h3>
+                    <p>Extracting training data, system prompts, and user information via crafted queries.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">04</div>
+                <div class="module-content">
+                    <h3>RAG Security: Attack & Defend</h3>
+                    <p>Poisoning retrieval pipelines, bypassing filters, and securing your RAG stack.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">05</div>
+                <div class="module-content">
+                    <h3>AI Agent Hijacking</h3>
+                    <p>Exploiting tool-calling, memory, and autonomous decision loops in AI agents.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">06</div>
+                <div class="module-content">
+                    <h3>Adversarial Machine Learning</h3>
+                    <p>Crafting adversarial inputs, evasion techniques, and testing model robustness.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">07</div>
+                <div class="module-content">
+                    <h3>AI Supply Chain Attacks</h3>
+                    <p>Model provenance, poisoned fine-tunes, backdoor detection, and dependency risks.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-num">08</div>
+                <div class="module-content">
+                    <h3>Building Your AI Red Team Methodology</h3>
+                    <p>Putting it all together into a repeatable testing process you can use on any AI system.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instructor -->
+<section class="instructor">
+    <div class="container">
+        <h2>Your Instructor</h2>
+        <div class="creds-grid">
+            <div class="cred-card">
+                <div class="label">Certification</div>
+                <div class="value">OSCP</div>
+            </div>
+            <div class="cred-card">
+                <div class="label">CVE</div>
+                <div class="value">CVE-2020-8218</div>
+            </div>
+            <div class="cred-card">
+                <div class="label">Pentests</div>
+                <div class="value">250+</div>
+            </div>
+            <div class="cred-card">
+                <div class="label">Experience</div>
+                <div class="value">10 Years</div>
+            </div>
+        </div>
+        <p class="instructor-bio">
+            Simon Nolet is an offensive security specialist who discovered a critical RCE vulnerability in Pulse Connect Secure (CVE-2020-8218). He's performed 250+ penetration tests over a decade and now focuses on AI security — teaching teams to defend against the next generation of attacks.
+        </p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <details class="faq-item">
+            <summary>Do I need AI/ML knowledge?</summary>
+            <p>No. The course is designed for security professionals. You'll learn to attack AI systems from an offensive perspective, regardless of your ML background.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Is this hands-on?</summary>
+            <p>Yes. Every module includes practical labs where you attack real AI systems. No slides-only theory — you'll break things.</p>
+        </details>
+        <details class="faq-item">
+            <summary>How long do I have access?</summary>
+            <p>Lifetime access. Buy once, keep forever. Including all future updates and new modules.</p>
+        </details>
+        <details class="faq-item">
+            <summary>What if I'm not satisfied?</summary>
+            <p>30-day money-back guarantee. No questions asked. If the course doesn't deliver value, you get a full refund.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Is this for beginners or advanced?</summary>
+            <p>Both. We start with fundamentals and ramp up to advanced techniques. If you know basic security concepts, you can follow along. If you're experienced, the labs and methodology will push you.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Why is it only $7?</summary>
+            <p>This is the launch price. The course is in early access and the price will increase as more modules are added. Lock in the price now.</p>
+        </details>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="enroll">
+    <div class="container">
+        <h2>Stop Hoping Your AI Is Secure.<br>Learn to <span style="color: var(--neon-green);">Break It</span>.</h2>
+        <p class="subtitle">8 modules of hands-on AI red teaming. Lifetime access.</p>
+        <div class="price-tag">
+            <span class="amount">$7</span>
+        </div>
+        <a href="https://viperblackskull.gumroad.com/l/ai-redteam" class="cta-btn">Get the Course on Gumroad →</a>
+        <div class="hero-sub" style="margin-top: 16px;">30-day money-back guarantee · Instant access</div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Hacktive Education &middot; Montreal, Canada</p>
+        <p style="margin-top: 4px;">
+            <a href="https://hacktive.education">hacktive.education</a> &middot;
+            <a href="https://www.youtube.com/@hacktiveeducation">YouTube</a> &middot;
+            <a href="https://www.linkedin.com/in/simon-nolet/">LinkedIn</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
