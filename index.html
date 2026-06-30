@@ -514,6 +514,18 @@
             font-weight: 500;
         }
 
+        .about-text a {
+            color: var(--accent-green);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.4);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .about-text a:hover {
+            color: var(--accent-cyan);
+            border-bottom-color: var(--accent-cyan);
+        }
+
         /* Experience Section */
         .experience-card {
             display: flex;
@@ -909,6 +921,7 @@
             <li><a href="#volunteering" class="nav-link">Community</a></li>
             <li><a href="#presentations" class="nav-link">Talks</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="https://www.skool.com/hacktive-education-4611" target="_blank" rel="noopener" class="nav-link" style="color: var(--accent-green);">Join ↗</a></li>
             <li><a href="ai-portfolio.html" class="nav-link" style="color: var(--accent-cyan);">AI Portfolio →</a></li>
             <li><a href="support.html" class="nav-link">Support</a></li>
         </ul>
@@ -951,7 +964,7 @@
                 <div class="card about-content">
                     <div class="about-text" id="about-text">
                         <p><span class="highlight">Simon Nolet</span> is a cybersecurity professional with over 10 years of experience in offensive security. After conducting 250+ penetration tests and developing deep expertise in enterprise security assessments, he is now focused on a new mission: <strong>teaching security professionals how to integrate AI into cyber operations without losing the critical thinking that makes them effective.</strong></p>
-                        <p>Through <span class="highlight">Hacktive Education</span>, Simon builds training that puts AI to work across the full spectrum of cyber operations — from reconnaissance and vulnerability assessment to detection, response, and red teaming. The goal is not AI for its own sake, but faster, sharper operations where humans stay in control of the decisions that matter.</p>
+                        <p>Through <span class="highlight">Hacktive Education</span>, Simon builds training that puts AI to work across the full spectrum of cyber operations — from reconnaissance and vulnerability assessment to detection, response, and red teaming. The goal is not AI for its own sake, but faster, sharper operations where humans stay in control of the decisions that matter. He also teaches the <a href="course/">AI Red Teaming course</a> — break AI systems before attackers do.</p>
                         <p>His philosophy: AI should <em>augment</em> security teams, not replace them. Practical, hands-on education. Real-world scenarios. Critical thinking always.</p>
                     </div>
                 </div>
@@ -969,7 +982,7 @@
                     <div class="experience-icon">HE</div>
                     <div class="experience-details">
                         <h3 id="experience-role">Founder @ Hacktive Education</h3>
-                        <p id="experience-text">10+ years of professional experience in offensive security, including a decade as Senior Advisor at Desjardins. Now focused on teaching AI for cyber operations through Hacktive Education. Background in enterprise penetration testing, Active Directory security, and red team operations.</p>
+                        <p id="experience-text">10+ years of professional experience as a penetration tester, including six years as a Senior Advisor at Desjardins. Now focused on teaching AI for cyber operations through Hacktive Education. Background in enterprise penetration testing, Active Directory security, and red team operations.</p>
                     </div>
                 </div>
             </div>
@@ -1075,11 +1088,11 @@
                         </li>
                         <li>
                             <a href="https://hackfest.ca/fr/formations/sec103/">Sec 103 Training</a>
-                            <span class="tag">5 years</span>
+                            <span class="tag">6 years</span>
                         </li>
                         <li>
                             <a href="https://nsec.io/session/2024-ctf-101.html">CTF 101 NSEC</a>
-                            <span class="tag">2 years</span>
+                            <span class="tag">3 years</span>
                         </li>
                         <li>
                             <a href="https://cybereco.ca/en/ctf101/">CTF 101 CyberEco</a>
@@ -1278,11 +1291,11 @@
                 statPentests: "Penetration Tests",
                 statTalks: "Conference Talks",
                 aboutTitle: "About",
-                aboutText: '<p><span class="highlight">Simon Nolet</span> is a cybersecurity professional with over 10 years of experience in offensive security. After conducting 250+ penetration tests and developing deep expertise in enterprise security assessments, he is now focused on a new mission: <strong>teaching security professionals how to integrate AI into cyber operations without losing the critical thinking that makes them effective.</strong></p><p>Through <span class="highlight">Hacktive Education</span>, Simon builds training that puts AI to work across the full spectrum of cyber operations — from reconnaissance and vulnerability assessment to detection, response, and red teaming. The goal is not AI for its own sake, but faster, sharper operations where humans stay in control of the decisions that matter.</p><p>His philosophy: AI should <em>augment</em> security teams, not replace them. Practical, hands-on education. Real-world scenarios. Critical thinking always.</p>',
+                aboutText: '<p><span class="highlight">Simon Nolet</span> is a cybersecurity professional with over 10 years of experience in offensive security. After conducting 250+ penetration tests and developing deep expertise in enterprise security assessments, he is now focused on a new mission: <strong>teaching security professionals how to integrate AI into cyber operations without losing the critical thinking that makes them effective.</strong></p><p>Through <span class="highlight">Hacktive Education</span>, Simon builds training that puts AI to work across the full spectrum of cyber operations — from reconnaissance and vulnerability assessment to detection, response, and red teaming. The goal is not AI for its own sake, but faster, sharper operations where humans stay in control of the decisions that matter. He also teaches the <a href="course/">AI Red Teaming course</a> — break AI systems before attackers do.</p><p>His philosophy: AI should <em>augment</em> security teams, not replace them. Practical, hands-on education. Real-world scenarios. Critical thinking always.</p>',
                 heroMission: "Teaching security teams to apply AI across cyber operations — without losing the critical thinking that wins",
                 experienceTitle: "Experience",
                 experienceRole: "Founder @ Hacktive Education",
-                experienceText: "10+ years of professional experience in offensive security, including a decade as Senior Advisor at Desjardins. Now focused on teaching AI for cyber operations through Hacktive Education. Background in enterprise penetration testing, Active Directory security, and red team operations. Invited attendee at Offensive AICon. Member of the Dynamous community.",
+                experienceText: "10+ years of professional experience as a penetration tester, including six years as a Senior Advisor at Desjardins. Now focused on teaching AI for cyber operations through Hacktive Education. Background in enterprise penetration testing, Active Directory security, and red team operations. Invited attendee at Offensive AICon. Member of the Dynamous community.",
                 aiTitle: "AI & Security Exploration",
                 ai1Title: "AI-Assisted CTF Solving",
                 ai1Text: "Developing approaches to leverage AI for accelerating CTF challenge solving",
@@ -1311,11 +1324,11 @@
                 statPentests: "Tests d'intrusion",
                 statTalks: "Conférences",
                 aboutTitle: "À propos",
-                aboutText: '<p><span class="highlight">Simon Nolet</span> est un professionnel de la cybersécurité avec plus de 10 ans d\'expérience en sécurité offensive. Après avoir effectué plus de 250 tests d\'intrusion et développé une expertise approfondie en évaluations de sécurité d\'entreprise, il se concentre maintenant sur une nouvelle mission : <strong>enseigner aux professionnels de la sécurité comment intégrer l\'IA dans les opérations de cybersécurité sans perdre la pensée critique qui les rend efficaces.</strong></p><p>À travers <span class="highlight">Hacktive Education</span>, Simon développe des formations qui mettent l\'IA au service de l\'ensemble des opérations de cybersécurité — de la reconnaissance et l\'évaluation des vulnérabilités à la détection, la réponse et le red teaming. L\'objectif n\'est pas l\'IA pour elle-même, mais des opérations plus rapides et plus précises où les humains gardent le contrôle des décisions qui comptent.</p><p>Sa philosophie : l\'IA doit <em>augmenter</em> les équipes de sécurité, pas les remplacer. Éducation pratique. Scénarios réels. Pensée critique toujours.</p>',
+                aboutText: '<p><span class="highlight">Simon Nolet</span> est un professionnel de la cybersécurité avec plus de 10 ans d\'expérience en sécurité offensive. Après avoir effectué plus de 250 tests d\'intrusion et développé une expertise approfondie en évaluations de sécurité d\'entreprise, il se concentre maintenant sur une nouvelle mission : <strong>enseigner aux professionnels de la sécurité comment intégrer l\'IA dans les opérations de cybersécurité sans perdre la pensée critique qui les rend efficaces.</strong></p><p>À travers <span class="highlight">Hacktive Education</span>, Simon développe des formations qui mettent l\'IA au service de l\'ensemble des opérations de cybersécurité — de la reconnaissance et l\'évaluation des vulnérabilités à la détection, la réponse et le red teaming. L\'objectif n\'est pas l\'IA pour elle-même, mais des opérations plus rapides et plus précises où les humains gardent le contrôle des décisions qui comptent. Il enseigne aussi le cours <a href="course/">AI Red Teaming</a> — pirater les systèmes IA avant les attaquants.</p><p>Sa philosophie : l\'IA doit <em>augmenter</em> les équipes de sécurité, pas les remplacer. Éducation pratique. Scénarios réels. Pensée critique toujours.</p>',
                 heroMission: "Aider les équipes de sécurité à appliquer l'IA dans leurs opérations de cybersécurité — sans perdre la pensée critique",
                 experienceTitle: "Expérience",
                 experienceRole: "Fondateur @ Hacktive Education",
-                experienceText: "Plus de 10 ans d'expérience professionnelle en sécurité offensive, dont une décennie comme conseiller principal chez Desjardins. Se concentre maintenant sur l'enseignement de l'IA pour les opérations de cybersécurité via Hacktive Education. Expertise en tests d'intrusion d'entreprise, sécurité Active Directory et opérations de red team. Invité à Offensive AICon. Membre de la communauté Dynamous.",
+                experienceText: "Plus de 10 ans d'expérience professionnelle comme testeur d'intrusion, dont six ans comme conseiller principal chez Desjardins. Se concentre maintenant sur l'enseignement de l'IA pour les opérations de cybersécurité via Hacktive Education. Expertise en tests d'intrusion d'entreprise, sécurité Active Directory et opérations de red team. Invité à Offensive AICon. Membre de la communauté Dynamous.",
                 aiTitle: "Exploration IA & Sécurité",
                 ai1Title: "Résolution CTF Assistée par IA",
                 ai1Text: "Développement d'approches pour utiliser l'IA dans la résolution de défis CTF",
