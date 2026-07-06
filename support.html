@@ -365,6 +365,66 @@
             font-family: var(--font-display);
         }
 
+        /* Referral Code Chip */
+        .referral-code-wrapper {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .referral-code-label {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            color: var(--fg-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .referral-code {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px dashed var(--accent-green);
+            border-radius: var(--radius-sm);
+            color: var(--accent-green);
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            letter-spacing: 0.18em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .referral-code:hover {
+            background: rgba(0, 255, 136, 0.18);
+            box-shadow: 0 0 20px var(--glow-green);
+        }
+
+        .referral-code:focus-visible {
+            outline: 2px solid var(--accent-green);
+            outline-offset: 2px;
+        }
+
+        .referral-code.copied {
+            background: rgba(0, 255, 136, 0.25);
+            box-shadow: 0 0 24px var(--glow-green);
+        }
+
+        .copy-icon {
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .referral-code:hover .copy-icon,
+        .referral-code.copied .copy-icon {
+            opacity: 1;
+        }
+
         /* Footer */
         .footer {
             padding: 3rem 2rem;
@@ -457,23 +517,32 @@
                     <!-- Fizz Card -->
                     <div class="support-card">
                         <div class="company-logo">
-                            <img src="https://fizz.ca/themes/bookmark_2018/images/icons/fizz-white.svg" alt="Fizz" class="logo-img">
+                            <img src="img/fizz-logo.svg" alt="Fizz" class="logo-img">
                         </div>
                         <span class="card-category" id="fizz-category">Telecom</span>
                         <p class="card-description" id="fizz-description">
                             Reliable mobile and internet at a fair price. I've been a Fizz customer for years—their no-contract approach and flexible plans work great.
                         </p>
-                        <a href="#" class="referral-btn disabled" id="fizz-btn">
-                            <span id="fizz-btn-text">Coming Soon</span>
+                        <a href="https://fizz.ca" class="referral-btn" id="fizz-btn" target="_blank" rel="noopener">
+                            <span id="fizz-btn-text">Get Fizz</span>
                             <span>→</span>
                         </a>
-                        <p class="card-disclosure" id="fizz-disclosure">Referral link coming soon</p>
+                        <div class="referral-code-wrapper">
+                            <span class="referral-code-label" id="fizz-code-label">Referral code</span>
+                            <button class="referral-code" id="fizz-code" type="button" title="Click to copy">
+                                <span id="fizz-code-text">WAK1N</span>
+                                <span class="copy-icon" id="fizz-copy-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </span>
+                            </button>
+                        </div>
+                        <p class="card-disclosure" id="fizz-disclosure">Enter at activation for a $40 bonus</p>
                     </div>
 
                     <!-- Z.AI / GLM Card -->
                     <div class="support-card">
                         <div class="company-logo">
-                            <img src="https://www.zhipuai.cn/logo-en-white.svg" alt="Zhipu AI GLM" class="logo-img">
+                            <img src="img/glm-logo.svg" alt="Zhipu AI GLM" class="logo-img">
                         </div>
                         <span class="card-category" id="zai-category">AI</span>
                         <p class="card-description" id="zai-description">
@@ -557,8 +626,10 @@
                 disclosure: "// Transparency: I may receive benefits from these links //",
                 fizzCategory: "Telecom",
                 fizzDescription: "Reliable mobile and internet at a fair price. I've been a Fizz customer for years—their no-contract approach and flexible plans work great.",
-                fizzBtnText: "Coming Soon",
-                fizzDisclosure: "Referral link coming soon",
+                fizzBtnText: "Get Fizz",
+                fizzCodeLabel: "Referral code",
+                fizzCodeTitle: "Click to copy",
+                fizzDisclosure: "Enter at activation for a $40 bonus",
                 zaiCategory: "AI",
                 zaiDescription: "Full support for Claude Code, Cline, and 20+ coding tools starting at $10/month. Great for AI-assisted development workflows.",
                 zaiBtnText: "Get GLM Plan",
@@ -571,8 +642,10 @@
                 disclosure: "// Transparence : Je peux recevoir des avantages de ces liens //",
                 fizzCategory: "Telecom",
                 fizzDescription: "Mobile et internet fiables à un prix équitable. Client Fizz depuis des années - leur approche sans contrat et les forfaits flexibles fonctionnent très bien.",
-                fizzBtnText: "Bientôt disponible",
-                fizzDisclosure: "Lien de parrainage à venir",
+                fizzBtnText: "Obtenir Fizz",
+                fizzCodeLabel: "Code de parrainage",
+                fizzCodeTitle: "Cliquez pour copier",
+                fizzDisclosure: "Entrez à l'activation pour un bonus de 40 $",
                 zaiCategory: "IA",
                 zaiDescription: "Support complet pour Claude Code, Cline et plus de 20 outils de codage à partir de 10$/mois. Excellent pour les workflows de développement assistés par IA.",
                 zaiBtnText: "Obtenir le plan GLM",
@@ -592,6 +665,8 @@
             document.getElementById('fizz-category').textContent = t.fizzCategory;
             document.getElementById('fizz-description').textContent = t.fizzDescription;
             document.getElementById('fizz-btn-text').textContent = t.fizzBtnText;
+            document.getElementById('fizz-code-label').textContent = t.fizzCodeLabel;
+            document.getElementById('fizz-code').title = t.fizzCodeTitle;
             document.getElementById('fizz-disclosure').textContent = t.fizzDisclosure;
             document.getElementById('zai-category').textContent = t.zaiCategory;
             document.getElementById('zai-description').textContent = t.zaiDescription;
@@ -613,6 +688,38 @@
                 setLanguage(savedLang);
             }
         });
+
+        // Referral code copy-to-clipboard
+        (function () {
+            const codeBtn = document.getElementById('fizz-code');
+            const iconWrap = document.getElementById('fizz-copy-icon');
+            if (!codeBtn || !iconWrap) return;
+
+            const copySvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+            codeBtn.addEventListener('click', async () => {
+                const code = 'WAK1N';
+                try {
+                    await navigator.clipboard.writeText(code);
+                } catch (e) {
+                    const ta = document.createElement('textarea');
+                    ta.value = code;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand('copy'); } catch (_) {}
+                    document.body.removeChild(ta);
+                }
+                iconWrap.innerHTML = checkSvg;
+                codeBtn.classList.add('copied');
+                setTimeout(() => {
+                    iconWrap.innerHTML = copySvg;
+                    codeBtn.classList.remove('copied');
+                }, 1500);
+            });
+        })();
     </script>
 </body>
 </html>
